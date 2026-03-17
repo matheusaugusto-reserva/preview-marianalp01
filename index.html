@@ -1357,6 +1357,7 @@ body,
   aspect-ratio: 16 / 9 !important;
   height: auto !important;
   padding-bottom: 0 !important;
+  border-radius: 10px !important;
   overflow: hidden !important;
 }
 .elementor-element-e36d219 .perfmatters-lazy-youtube img {
@@ -1365,7 +1366,7 @@ body,
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  transform: scale(1.05) !important;
+  transform: none !important;
 }
 .elementor-element-e36d219 .perfmatters-lazy-youtube iframe {
   position: absolute !important;
@@ -2339,6 +2340,157 @@ body *::-webkit-scrollbar {
   .lp-price-new .elementor-heading-title b { font-size: clamp(44px, 12vw, 60px) !important; }
 }
 </style>
+<style id="lp-mobile-button-text-fix">
+@media (max-width: 767px) {
+  .elementor-button,
+  .elementor-button .elementor-button-content-wrapper,
+  .elementor-button .elementor-button-text,
+  .elementor-button span {
+    text-shadow: none !important;
+  }
+}
+</style>
+<style id="lp-hero-gold-highlight">
+#hero .elementor-element-60649fd .lp-hero-gold {
+  color: #C8A46A !important;
+  -webkit-text-fill-color: #C8A46A !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+</style>
+<style id="lp-mobile-video-size-fix">
+@media (max-width: 767px) {
+  #hero .elementor-element-e36d219 .perfmatters-lazy-youtube {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    margin-left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #hero .elementor-element-e36d219 .perfmatters-lazy-youtube iframe {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+}
+</style>
+<style id="lp-mobile-sobre-fix">
+@media (max-width: 767px) {
+  .elementor-element-1da7956 {
+    --padding-bottom: clamp(96px, 18vw, 136px) !important;
+  }
+
+  .elementor-element-1da7956 > .e-con-inner {
+    grid-template-columns: 1fr !important;
+    max-width: min(100%, 92vw) !important;
+    margin: 0 auto !important;
+    row-gap: 18px !important;
+    column-gap: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .elementor-element-e5c1f15,
+  .elementor-element-8985fb5,
+  .lp-mariana-photo {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+    transform: none !important;
+  }
+
+  .elementor-element-1da7956,
+  .elementor-element-1da7956 > .e-con-inner,
+  .elementor-element-e5c1f15,
+  .elementor-element-8985fb5,
+  .elementor-element-e5c1f15 > .elementor-widget-container,
+  .elementor-element-8985fb5 > .elementor-widget-container,
+  .elementor-element-e5c1f15 .elementor-heading-title,
+  .elementor-element-8985fb5 .elementor-heading-title {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .elementor-element-8985fb5 .elementor-heading-title {
+    font-size: clamp(15px, 4.1vw, 18px) !important;
+    line-height: 1.72 !important;
+    border-left-width: 2px !important;
+    padding-left: 14px !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+</style>
+<style id="lp-hide-elementor-device-mode">
+#elementor-device-mode,
+#elementor-device-mode-wpr,
+.elementor-screen-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+</style>
+<style id="lp-show-scrollbar">
+html,
+body,
+body *,
+.elementor-10983 .e-con,
+.elementor-10983 .e-con-inner,
+.lp-ideal-section,
+.lp-ideal-section > .e-con-inner,
+.lp-ideal-grid,
+.elementor-element-b9bbf70,
+.elementor-element-aa06c78 {
+  scrollbar-width: auto !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+body *::-webkit-scrollbar,
+.elementor-10983 .e-con::-webkit-scrollbar,
+.elementor-10983 .e-con-inner::-webkit-scrollbar,
+.elementor-element-b9bbf70::-webkit-scrollbar,
+.elementor-element-aa06c78::-webkit-scrollbar,
+.lp-ideal-grid::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+  display: block !important;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: rgba(200, 164, 106, 0.55) !important;
+  border-radius: 999px !important;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+</style>
 </head>
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-10983 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-10983">
 	<!-- Google Tag Manager (noscript) -->
@@ -2353,7 +2505,7 @@ body *::-webkit-scrollbar {
 
 				<div class="elementor-element elementor-element-60649fd elementor-widget elementor-widget-heading" data-id="60649fd" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Descubra como montar equipes mais eficientes e evitar preju&#237;zos com contrata&#231;&#245;es equivocadas</h2>
+					<h2 class="elementor-heading-title elementor-size-default">Descubra como montar <span class="lp-hero-gold">equipes mais eficientes e evitar preju&#237;zos</span> com contrata&#231;&#245;es equivocadas</h2>
 				</div>
 				</div>
 
@@ -2365,7 +2517,7 @@ body *::-webkit-scrollbar {
 
 				<div class="elementor-element elementor-element-e36d219 e-con-full e-flex e-con e-child" data-id="e36d219" data-element_type="container" data-e-type="container" style="justify-content:center;">
 					<div class="perfmatters-lazy-youtube" data-src="https://www.youtube.com/embed/hL-vP3LF_mo" style="width:100%;max-width:720px;">
-						<img src="https://i.ytimg.com/vi/hL-vP3LF_mo/hqdefault.jpg" alt="V&#237;deo" title="Assista ao v&#237;deo">
+						<img src="https://i.ytimg.com/vi_webp/hL-vP3LF_mo/maxresdefault.webp" srcset="https://i.ytimg.com/vi_webp/hL-vP3LF_mo/maxresdefault.webp 1280w, https://i.ytimg.com/vi/hL-vP3LF_mo/sddefault.jpg 640w, https://i.ytimg.com/vi/hL-vP3LF_mo/hqdefault.jpg 480w" sizes="(max-width: 767px) 100vw, 720px" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/hL-vP3LF_mo/sddefault.jpg';" alt="V&#237;deo" title="Assista ao v&#237;deo">
 						<div class="play"></div>
 					</div>
 				</div>
@@ -2817,7 +2969,7 @@ body *::-webkit-scrollbar {
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-762dde1 elementor-widget elementor-widget-heading" data-id="762dde1" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<p class="elementor-heading-title elementor-size-default">&#169; 2025 Mariana Portes Gelais. Todos os direitos reservados.</p>
+					<p class="elementor-heading-title elementor-size-default">&#169; 2026 Mariana Portes Gelais. Todos os direitos reservados.</p>
 				</div>
 				</div>
 					</div>
@@ -3101,6 +3253,62 @@ if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_c
       }, 60);
     }
   });
+})();
+</script>
+<script>
+(function() {
+  function buildYoutubeUrl(src, extraQuery) {
+    if (!src) return '';
+    var separator = src.indexOf('?') === -1 ? '?' : '&';
+    var query = 'autoplay=1&rel=0';
+    if (extraQuery) query += '&' + extraQuery;
+    return src + separator + query;
+  }
+
+  function replaceWithIframe(wrapper) {
+    if (!wrapper || wrapper.querySelector('iframe')) return;
+
+    var src = wrapper.getAttribute('data-src');
+    if (!src) return;
+
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('src', buildYoutubeUrl(src, wrapper.getAttribute('data-query') || ''));
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', '1');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('title', 'Video de apresentacao');
+    iframe.setAttribute('loading', 'lazy');
+
+    wrapper.innerHTML = '';
+    wrapper.appendChild(iframe);
+  }
+
+  function activateLazyYoutube() {
+    var wrappers = document.querySelectorAll('.perfmatters-lazy-youtube[data-src]');
+    wrappers.forEach(function(wrapper) {
+      wrapper.style.cursor = 'pointer';
+      if (!wrapper.hasAttribute('tabindex')) wrapper.setAttribute('tabindex', '0');
+      if (!wrapper.hasAttribute('role')) wrapper.setAttribute('role', 'button');
+      if (!wrapper.hasAttribute('aria-label')) wrapper.setAttribute('aria-label', 'Reproduzir video');
+
+      wrapper.addEventListener('click', function() {
+        replaceWithIframe(wrapper);
+      });
+
+      wrapper.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          replaceWithIframe(wrapper);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', activateLazyYoutube);
+  } else {
+    activateLazyYoutube();
+  }
 })();
 </script>
 </body>
