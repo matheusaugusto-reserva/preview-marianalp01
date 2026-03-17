@@ -1,0 +1,3109 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]noclsop/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?noclsop=1"}else{document.location.href=href.replace("#","?noclsop=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&noclsop=1"}else{document.location.href=href.replace("#","&noclsop=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><title>Forma&#231;&#227;o de Condutores de Entrevista &#8211; Mariana Portes Gelais</title><link rel="preload" href="assets/fonts/eece88dbf693af86.woff2" as="font" type="font/woff2"><link rel="preload" href="assets/fonts/eece88dbf693af86.woff2" as="font" type="font/woff2"><style id="perfmatters-used-css">html{line-height:1.15;-webkit-text-size-adjust:100%;}*,:after,:before{box-sizing:border-box;}body{background-color:#fff;color:#333;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-size:1rem;font-weight:400;line-height:1.5;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}h1,h2,h3,h4,h5,h6{color:inherit;font-family:inherit;font-weight:500;line-height:1.2;margin-block-end:1rem;margin-block-start:.5rem;}h2{font-size:2rem;}h3{font-size:1.75rem;}p{margin-block-end:.9rem;margin-block-start:0;}a{background-color:transparent;color:#c36;text-decoration:none;}a:active,a:hover{color:#336;}a:not([href]):not([tabindex]),a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none;}a:not([href]):not([tabindex]):focus{outline:0;}b,strong{font-weight:bolder;}img{border-style:none;height:auto;max-width:100%;}details{display:block;}summary{display:list-item;}[hidden],template{display:none;}@media print{*,:after,:before{background:transparent !important;box-shadow:none !important;color:#000 !important;text-shadow:none !important;}a,a:visited{text-decoration:underline;}a[href]:after{content:" (" attr(href) ")";}a[href^="#"]:after,a[href^="javascript:"]:after{content:"";}img,tr{-moz-column-break-inside:avoid;break-inside:avoid;}h2,h3,p{orphans:3;widows:3;}h2,h3{-moz-column-break-after:avoid;break-after:avoid;}}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;width:auto;}[type=button],[type=submit],button{background-color:transparent;border:1px solid #c36;border-radius:3px;color:#c36;display:inline-block;font-size:1rem;font-weight:400;padding:.5rem 1rem;text-align:center;transition:all .3s;-webkit-user-select:none;-moz-user-select:none;user-select:none;white-space:nowrap;}[type=button]:focus:not(:focus-visible),[type=submit]:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none;}[type=button]:focus,[type=button]:hover,[type=submit]:focus,[type=submit]:hover,button:focus,button:hover{background-color:#c36;color:#fff;text-decoration:none;}[type=button]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer;}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0;}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto;}[type=search]{-webkit-appearance:textfield;outline-offset:-2px;}[type=search]::-webkit-search-decoration{-webkit-appearance:none;}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}:root{--direction-multiplier:1;}body.rtl,html[dir=rtl]{--direction-multiplier:-1;}.elementor *,.elementor :after,.elementor :before{box-sizing:border-box;}.elementor a{box-shadow:none;text-decoration:none;}.elementor img{border:none;border-radius:0;box-shadow:none;height:auto;max-width:100%;}.elementor .elementor-widget:not(.elementor-widget-text-editor):not(.elementor-widget-theme-post-content) figure{margin:0;}.elementor embed,.elementor iframe,.elementor object,.elementor video{border:none;line-height:1;margin:0;max-width:100%;width:100%;}.e-con-inner>.elementor-element.elementor-absolute,.e-con>.elementor-element.elementor-absolute,.elementor-widget-wrap>.elementor-element.elementor-absolute{position:absolute;}.elementor-element.elementor-absolute,.elementor-element.elementor-fixed{z-index:1;}.elementor-element{--flex-direction:initial;--flex-wrap:initial;--justify-content:initial;--align-items:initial;--align-content:initial;--gap:initial;--flex-basis:initial;--flex-grow:initial;--flex-shrink:initial;--order:initial;--align-self:initial;align-self:var(--align-self);flex-basis:var(--flex-basis);flex-grow:var(--flex-grow);flex-shrink:var(--flex-shrink);order:var(--order);}.elementor-element:where(.e-con-full,.elementor-widget){align-content:var(--align-content);align-items:var(--align-items);flex-direction:var(--flex-direction);flex-wrap:var(--flex-wrap);gap:var(--row-gap) var(--column-gap);justify-content:var(--justify-content);}.elementor-align-justify .elementor-button{width:100%;}@media (max-width:767px){.elementor-mobile-align-justify .elementor-button{width:100%;}}:root{--page-title-display:block;}@keyframes eicon-spin{0%{transform:rotate(0deg);}to{transform:rotate(359deg);}}.elementor-widget{position:relative;}.elementor-widget:not(:last-child){margin-block-end:var(--kit-widget-spacing,20px);}.elementor-widget:not(:last-child).elementor-absolute,.elementor-widget:not(:last-child).elementor-widget__width-auto,.elementor-widget:not(:last-child).elementor-widget__width-initial{margin-block-end:0;}@media (min-width:1367px){#elementor-device-mode:after{content:"desktop";}}@media (min-width:2400px){#elementor-device-mode:after{content:"widescreen";}}@media (max-width:1366px){#elementor-device-mode:after{content:"laptop";}}@media (max-width:-1){#elementor-device-mode:after{content:"tablet_extra";}}@media (max-width:1024px){#elementor-device-mode:after{content:"tablet";}}@media (max-width:-1){#elementor-device-mode:after{content:"mobile_extra";}}@media (max-width:767px){#elementor-device-mode:after{content:"mobile";}}@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth;}}.e-con{--border-radius:0;--border-top-width:0px;--border-right-width:0px;--border-bottom-width:0px;--border-left-width:0px;--border-style:initial;--border-color:initial;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--content-width:min(100%,var(--container-max-width,1140px));--width:100%;--min-height:initial;--height:auto;--text-align:initial;--margin-top:0px;--margin-right:0px;--margin-bottom:0px;--margin-left:0px;--padding-top:var(--container-default-padding-top,10px);--padding-right:var(--container-default-padding-right,10px);--padding-bottom:var(--container-default-padding-bottom,10px);--padding-left:var(--container-default-padding-left,10px);--position:relative;--z-index:revert;--overflow:visible;--gap:var(--widgets-spacing,20px);--row-gap:var(--widgets-spacing-row,20px);--column-gap:var(--widgets-spacing-column,20px);--overlay-mix-blend-mode:initial;--overlay-opacity:1;--overlay-transition:.3s;--e-con-grid-template-columns:repeat(3,1fr);--e-con-grid-template-rows:repeat(2,1fr);border-radius:var(--border-radius);height:var(--height);min-height:var(--min-height);min-width:0;overflow:var(--overflow);position:var(--position);width:var(--width);z-index:var(--z-index);--flex-wrap-mobile:wrap;}.e-con:where(:not(.e-div-block-base)){transition:background var(--background-transition,.3s),border var(--border-transition,.3s),box-shadow var(--border-transition,.3s),transform var(--e-con-transform-transition-duration,.4s);}.e-con{--margin-block-start:var(--margin-top);--margin-block-end:var(--margin-bottom);--margin-inline-start:var(--margin-left);--margin-inline-end:var(--margin-right);--padding-inline-start:var(--padding-left);--padding-inline-end:var(--padding-right);--padding-block-start:var(--padding-top);--padding-block-end:var(--padding-bottom);--border-block-start-width:var(--border-top-width);--border-block-end-width:var(--border-bottom-width);--border-inline-start-width:var(--border-left-width);--border-inline-end-width:var(--border-right-width);}.e-con{margin-block-end:var(--margin-block-end);margin-block-start:var(--margin-block-start);margin-inline-end:var(--margin-inline-end);margin-inline-start:var(--margin-inline-start);padding-inline-end:var(--padding-inline-end);padding-inline-start:var(--padding-inline-start);}.e-con.e-flex{--flex-direction:column;--flex-basis:auto;--flex-grow:0;--flex-shrink:1;flex:var(--flex-grow) var(--flex-shrink) var(--flex-basis);}.e-con-full,.e-con>.e-con-inner{padding-block-end:var(--padding-block-end);padding-block-start:var(--padding-block-start);text-align:var(--text-align);}.e-con-full.e-flex,.e-con.e-flex>.e-con-inner{flex-direction:var(--flex-direction);}.e-con,.e-con>.e-con-inner{display:var(--display);}.e-con-boxed.e-flex{align-content:normal;align-items:normal;flex-direction:column;flex-wrap:nowrap;justify-content:normal;}.e-con-boxed{gap:initial;text-align:initial;}.e-con.e-flex>.e-con-inner{align-content:var(--align-content);align-items:var(--align-items);align-self:auto;flex-basis:auto;flex-grow:1;flex-shrink:1;flex-wrap:var(--flex-wrap);justify-content:var(--justify-content);}.e-con>.e-con-inner{gap:var(--row-gap) var(--column-gap);height:100%;margin:0 auto;max-width:var(--content-width);padding-inline-end:0;padding-inline-start:0;width:100%;}:is(.elementor-section-wrap,[data-elementor-id])>.e-con{--margin-left:auto;--margin-right:auto;max-width:min(100%,var(--width));}:is([data-widget_type="e-component.default"],[data-widget_type="e-component.default"]>.elementor-section-wrap)>.e-con{--margin-right:0px;--margin-left:0px;}.e-con .elementor-widget.elementor-widget{margin-block-end:0;}.e-con:before,.e-con>.elementor-background-slideshow:before,.e-con>.elementor-motion-effects-container>.elementor-motion-effects-layer:before,:is(.e-con,.e-con>.e-con-inner)>.elementor-background-video-container:before{border-block-end-width:var(--border-block-end-width);border-block-start-width:var(--border-block-start-width);border-color:var(--border-color);border-inline-end-width:var(--border-inline-end-width);border-inline-start-width:var(--border-inline-start-width);border-radius:var(--border-radius);border-style:var(--border-style);content:var(--background-overlay);display:block;height:max(100% + var(--border-top-width) + var(--border-bottom-width),100%);left:calc(0px - var(--border-left-width));mix-blend-mode:var(--overlay-mix-blend-mode);opacity:var(--overlay-opacity);position:absolute;top:calc(0px - var(--border-top-width));transition:var(--overlay-transition,.3s);width:max(100% + var(--border-left-width) + var(--border-right-width),100%);}.e-con:before{transition:background var(--overlay-transition,.3s),border-radius var(--border-transition,.3s),opacity var(--overlay-transition,.3s);}.e-con>.elementor-background-slideshow,:is(.e-con,.e-con>.e-con-inner)>.elementor-background-video-container{border-block-end-width:var(--border-block-end-width);border-block-start-width:var(--border-block-start-width);border-color:var(--border-color);border-inline-end-width:var(--border-inline-end-width);border-inline-start-width:var(--border-inline-start-width);border-radius:var(--border-radius);border-style:var(--border-style);height:max(100% + var(--border-top-width) + var(--border-bottom-width),100%);left:calc(0px - var(--border-left-width));top:calc(0px - var(--border-top-width));width:max(100% + var(--border-left-width) + var(--border-right-width),100%);}@media (max-width:767px){:is(.e-con,.e-con>.e-con-inner)>.elementor-background-video-container.elementor-hidden-mobile{display:none;}}:is(.e-con,.e-con>.e-con-inner)>.elementor-background-video-container:before{z-index:1;}:is(.e-con,.e-con>.e-con-inner)>.elementor-background-slideshow:before{z-index:2;}.e-con .elementor-widget{min-width:0;}.e-con>.e-con-inner>.elementor-widget>.elementor-widget-container,.e-con>.elementor-widget>.elementor-widget-container{height:100%;}.e-con.e-con>.e-con-inner>.elementor-widget,.elementor.elementor .e-con>.elementor-widget{max-width:100%;}.e-con .elementor-widget:not(:last-child){--kit-widget-spacing:0px;}@media (max-width:767px){.e-con.e-flex{--width:100%;--flex-wrap:var(--flex-wrap-mobile);}}.elementor-element:where(:not(.e-con)):where(:not(.e-div-block-base)) .elementor-widget-container,.elementor-element:where(:not(.e-con)):where(:not(.e-div-block-base)):not(:has(.elementor-widget-container)){transition:background .3s,border .3s,border-radius .3s,box-shadow .3s,transform var(--e-transform-transition-duration,.4s);}.elementor-heading-title{line-height:1;margin:0;padding:0;}.elementor-button{background-color:#69727d;border-radius:3px;color:#fff;display:inline-block;fill:#fff;font-size:15px;line-height:1;padding:12px 24px;text-align:center;transition:all .3s;}.elementor-button:focus,.elementor-button:hover,.elementor-button:visited{color:#fff;}.elementor-button-content-wrapper{display:flex;flex-direction:row;gap:5px;justify-content:center;}.elementor-button-text{display:inline-block;}.elementor-button span{text-decoration:inherit;}.elementor-icon{color:#69727d;display:inline-block;font-size:50px;line-height:1;text-align:center;transition:all .3s;}.elementor-icon:hover{color:#69727d;}.elementor-icon i,.elementor-icon svg{display:block;height:1em;position:relative;width:1em;}.elementor-icon i:before,.elementor-icon svg:before{left:50%;position:absolute;transform:translateX(-50%);}.animated{animation-duration:1.25s;}.animated.animated-slow{animation-duration:2s;}.animated.animated-fast{animation-duration:.75s;}.animated.infinite{animation-iteration-count:infinite;}.animated.reverse{animation-direction:reverse;animation-fill-mode:forwards;}@media (prefers-reduced-motion:reduce){.animated{animation:none !important;}html *{transition-delay:0s !important;transition-duration:0s !important;}}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(1turn);transform:rotate(1turn);}}@keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(1turn);transform:rotate(1turn);}}@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/4f8643d290555616.eot");src:url("assets/fonts/24dd5084746216a3.eot") format("embedded-opentype"),url("assets/fonts/123fb458754a8fee.woff2") format("woff2"),url("assets/fonts/da96503f0268dc91.woff") format("woff"),url("assets/fonts/4f6d96024c498ddd.ttf") format("truetype"),url("assets/images/a7e8141368d0c8ab.svg") format("svg");}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/3fb33b47fc180ab1.eot");src:url("assets/fonts/e54eee0b84c4b74c.eot") format("embedded-opentype"),url("assets/fonts/8d26f7bc0ae288fc.woff2") format("woff2"),url("assets/fonts/89cb1601900e29c2.woff") format("woff"),url("assets/fonts/aa0c2ce3c0c5da31.ttf") format("truetype"),url("assets/images/4d9d77a44178a4f4.svg") format("svg");}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:swap;src:url("assets/fonts/6e1138dbd3347e34.eot");src:url("assets/fonts/53360b275bdf3293.eot") format("embedded-opentype"),url("assets/fonts/ef641b6645df5032.woff2") format("woff2"),url("assets/fonts/03becd76f9ac2bf4.woff") format("woff"),url("assets/fonts/7b5490a8291b2764.ttf") format("truetype"),url("assets/images/beb4101ad9d73a21.svg") format("svg");}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit;}.elementor-widget-image{text-align:center;}.elementor-widget-image a{display:inline-block;}.elementor-widget-image a img[src$=".svg"]{width:48px;}.elementor-widget-image img{display:inline-block;vertical-align:middle;}.elementor-widget-image-box .elementor-image-box-content{width:100%;}@media (min-width:768px){.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto;}}@media (max-width:767px){.elementor-widget-image-box .elementor-image-box-img{margin-inline:auto !important;margin-bottom:15px;}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block;}.elementor-widget-image-box .elementor-image-box-img img{display:block;line-height:0;}.elementor-widget-image-box .elementor-image-box-title a{color:inherit;}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center;}.elementor-widget-image-box .elementor-image-box-description{margin:0;}.elementor-widget-n-accordion{--n-accordion-title-font-size:20px;--n-accordion-title-flex-grow:initial;--n-accordion-title-justify-content:initial;--n-accordion-title-icon-order:-1;--n-accordion-border-width:1px;--n-accordion-border-color:#d5d8dc;--n-accordion-border-style:solid;--n-accordion-item-title-flex-grow:initial;--n-accordion-item-title-space-between:0px;--n-accordion-item-title-distance-from-content:0px;--n-accordion-padding:10px;--n-accordion-border-radius:0px;--n-accordion-icon-size:15px;--n-accordion-title-normal-color:#1f2124;--n-accordion-title-hover-color:#1f2124;--n-accordion-title-active-color:#1f2124;--n-accordion-icon-normal-color:var(--n-accordion-title-normal-color);--n-accordion-icon-hover-color:var(--n-accordion-title-hover-color);--n-accordion-icon-active-color:var(--n-accordion-title-active-color);--n-accordion-icon-gap:0 10px;width:100%;}.elementor-widget-n-accordion .e-n-accordion details>summary::-webkit-details-marker{display:none;}.elementor-widget-n-accordion .e-n-accordion-item{display:flex;flex-direction:column;position:relative;}.elementor-widget-n-accordion .e-n-accordion-item:not(:last-child){margin-block-end:var(--n-accordion-item-title-space-between);}:where(.elementor-widget-n-accordion .e-n-accordion-item>.e-con){border:var(--n-accordion-border-width) var(--n-accordion-border-style) var(--n-accordion-border-color);}.elementor-widget-n-accordion .e-n-accordion-item-title{align-items:center;border-color:var(--n-accordion-border-color);border-radius:var(--n-accordion-border-radius);border-style:var(--n-accordion-border-style);border-width:var(--n-accordion-border-width);color:var(--n-accordion-title-normal-color);cursor:pointer;display:flex;flex-direction:row;flex-grow:var(--n-menu-title-flex-grow);gap:var(--n-accordion-icon-gap);justify-content:var(--n-accordion-title-justify-content);list-style:none;padding:var(--n-accordion-padding);}.elementor-widget-n-accordion .e-n-accordion-item-title-header{display:flex;}.elementor-widget-n-accordion .e-n-accordion-item-title-header h1,.elementor-widget-n-accordion .e-n-accordion-item-title-header h2,.elementor-widget-n-accordion .e-n-accordion-item-title-header h3,.elementor-widget-n-accordion .e-n-accordion-item-title-header h4,.elementor-widget-n-accordion .e-n-accordion-item-title-header h5,.elementor-widget-n-accordion .e-n-accordion-item-title-header h6,.elementor-widget-n-accordion .e-n-accordion-item-title-header p{margin-block-end:0;margin-block-start:0;}.elementor-widget-n-accordion .e-n-accordion-item-title-text{align-items:center;font-size:var(--n-accordion-title-font-size);}.elementor-widget-n-accordion .e-n-accordion-item-title-icon{align-items:center;display:flex;flex-direction:row;order:var(--n-accordion-title-icon-order);position:relative;width:-moz-fit-content;width:fit-content;}.elementor-widget-n-accordion .e-n-accordion-item-title-icon span{height:var(--n-accordion-icon-size);width:auto;}.elementor-widget-n-accordion .e-n-accordion-item-title-icon span>i{color:var(--n-accordion-icon-normal-color);font-size:var(--n-accordion-icon-size);}.elementor-widget-n-accordion .e-n-accordion-item-title-icon span>svg{fill:var(--n-accordion-icon-normal-color);height:var(--n-accordion-icon-size);}.elementor-widget-n-accordion .e-n-accordion-item-title>span{cursor:pointer;}.elementor-widget-n-accordion .e-n-accordion-item[open]>.e-n-accordion-item-title{color:var(--n-accordion-title-active-color);margin-block-end:var(--n-accordion-item-title-distance-from-content);}.elementor-widget-n-accordion .e-n-accordion-item[open]>.e-n-accordion-item-title .e-n-accordion-item-title-icon .e-opened{display:flex;}.elementor-widget-n-accordion .e-n-accordion-item[open]>.e-n-accordion-item-title .e-n-accordion-item-title-icon .e-closed{display:none;}.elementor-widget-n-accordion .e-n-accordion-item[open]>.e-n-accordion-item-title .e-n-accordion-item-title-icon span>i{color:var(--n-accordion-icon-active-color);}.elementor-widget-n-accordion .e-n-accordion-item[open]>.e-n-accordion-item-title .e-n-accordion-item-title-icon span>svg{fill:var(--n-accordion-icon-active-color);}.elementor-widget-n-accordion .e-n-accordion-item:not([open]) .e-con{display:none;}.elementor-widget-n-accordion .e-n-accordion-item:not([open]):hover>.e-n-accordion-item-title{color:var(--n-accordion-title-hover-color);}.elementor-widget-n-accordion .e-n-accordion-item:not([open]):hover>.e-n-accordion-item-title .e-n-accordion-item-title-icon span>i{color:var(--n-accordion-icon-hover-color);}.elementor-widget-n-accordion .e-n-accordion-item:not([open]):hover>.e-n-accordion-item-title .e-n-accordion-item-title-icon span>svg{fill:var(--n-accordion-icon-hover-color);}.elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title-icon .e-opened{display:none;}.elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title-icon .e-closed{display:flex;}.elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title-icon span>svg{fill:var(--n-accordion-icon-normal-color);}.elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title-icon span>i{color:var(--n-accordion-icon-normal-color);}.elementor-widget-n-accordion .e-n-accordion-item>span{cursor:pointer;}.elementor-widget-icon-box .elementor-icon-box-wrapper{display:flex;flex-direction:column;text-align:center;}.elementor-widget-icon-box .elementor-icon-box-icon{display:inline-block;flex:0 0 auto;line-height:0;}.elementor-widget-icon-box .elementor-icon-box-content{flex-grow:1;width:100%;}.elementor-widget-icon-box .elementor-icon-box-title a{color:inherit;}.elementor-widget-icon-box.elementor-position-inline-end .elementor-icon-box-wrapper{flex-direction:row-reverse;text-align:end;}@media (max-width:767px){.elementor-widget-icon-box.elementor-mobile-position-inline-end .elementor-icon-box-wrapper{flex-direction:row-reverse;text-align:end;}}</style>
+<meta name='robots' content='max-image-preview:large' />
+
+<link rel="alternate" type="application/rss+xml" title="Feed para Mariana Portes Gelais &raquo;" href="{{CTA_LINK}}" />
+<link rel="alternate" type="application/rss+xml" title="Feed de coment&#225;rios para Mariana Portes Gelais &raquo;" href="{{CTA_LINK}}" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="{{CTA_LINK}}" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="{{CTA_LINK}}" />
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 800px;--wp--style--global--wide-size: 1200px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='elementor-post-6-css' href='assets/css/28fc3eb6fc0388bd.css' media='all' />
+
+<link rel='stylesheet' id='elementor-post-10983-css' href='assets/css/dcc2d6f75ee58cfb.css' media='all' />
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(assets/images/7f00f4c5ed24af9e.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+<link rel='stylesheet' id='elementor-gf-local-poppins-css' href='assets/css/6008793758e59c14.css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='assets/css/48180e15bf1eaf24.css' media='all' />
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/5e5f40206ec83d8a.js" id="font-awesome-4-shim-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/f64b2daf8dc65a4b.js" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/93a79547361b8bcf.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="{{CTA_LINK}}" /><link rel="alternate" title="JSON" type="application/json" href="{{CTA_LINK}}" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{CTA_LINK}}" />
+<meta name="generator" content="WordPress 6.9.4" />
+
+<link rel='shortlink' href='{{CTA_LINK}}' />
+<!-- Head & Footer Code: Site-wide HEAD section start (page) -->
+<script type="rocketlazyloadscript">!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="assets/js/9fb1cbd995fb2e3c.js" as="script">
+<link rel="preload" href="assets/js/3b1ef61dd28bac40.js" as="script">
+<link rel="preload" href="assets/other/69d18530f496c934.m3u8" as="fetch">
+
+<!-- Head & Footer Code: Site-wide HEAD section end (page) -->
+<meta name="generator" content="Elementor 3.35.7; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<style>.perfmatters-lazy-youtube{position:relative;width:100%;max-width:100%;height:0;padding-bottom:56.23%;overflow:hidden}.perfmatters-lazy-youtube img{position:absolute;top:0;right:0;bottom:0;left:0;display:block;width:100%;max-width:100%;height:auto;margin:auto;border:none;cursor:pointer;transition:.5s all;-webkit-transition:.5s all;-moz-transition:.5s all}.perfmatters-lazy-youtube img:hover{-webkit-filter:brightness(75%)}.perfmatters-lazy-youtube .play{position:absolute;top:50%;left:50%;right:auto;width:68px;height:48px;margin-left:-34px;margin-top:-24px;background:url(assets/images/3b67f1de7aad7f85.svg) no-repeat;background-position:center;background-size:cover;pointer-events:none;filter:grayscale(1)}.perfmatters-lazy-youtube:hover .play{filter:grayscale(0)}.perfmatters-lazy-youtube iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:99}.wp-has-aspect-ratio .wp-block-embed__wrapper{position:relative;}.wp-has-aspect-ratio .perfmatters-lazy-youtube{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;padding-bottom:0}</style>	<meta property="og:image" content="assets/placeholders/og-image.svg">
+<meta property="twitter:image" content="assets/placeholders/og-image.svg">
+<style id="lp-custom-overrides">
+/* ============================================================
+   LP PREMIUM — Design System Completo
+   ============================================================ */
+
+/* --- BASE --------------------------------------------------- */
+html { scroll-behavior: smooth; }
+body { background: #060D1A !important; }
+.elementor-10983 { background: #060D1A; }
+
+/* Reset Elementor constraints que quebram os grids */
+.elementor-element-aa06c78,
+.elementor-element-a5a8cd5,
+.elementor-element-6ffc2de {
+  width: 100% !important;
+  max-width: 100% !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 1 !important;
+}
+
+/* Remove background-images de IDs reutilizados que tinham foto de perfil */
+.elementor-element-9dd29bb:not(.elementor-motion-effects-element-type-background),
+.elementor-element-9dd29bb > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-element-551e6f5:not(.elementor-motion-effects-element-type-background),
+.elementor-element-551e6f5 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-element-7cdc869:not(.elementor-motion-effects-element-type-background),
+.elementor-element-7cdc869 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image: none !important;
+}
+
+/* --- BOTÕES CTA PREMIUM ------------------------------------ */
+.elementor-button {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  padding: 18px 48px !important;
+  box-shadow: 0 0 40px rgba(59,130,246,.45), 0 6px 24px rgba(0,0,0,.35) !important;
+  transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s cubic-bezier(.4,0,.2,1) !important;
+  text-transform: uppercase !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.elementor-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.elementor-button:hover,
+.elementor-button:focus {
+  color: #fff !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 0 64px rgba(59,130,246,.7), 0 10px 36px rgba(0,0,0,.45) !important;
+}
+.elementor-button:hover::after { opacity: 1; }
+
+/* ============================================================
+   SEÇÃO: HERO
+   ============================================================ */
+.elementor-element-fe4f460 {
+  background: linear-gradient(180deg, #0C1D3D 0%, #060D1A 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.elementor-element-fe4f460::before {
+  content: '';
+  position: absolute;
+  top: -160px; left: 50%;
+  transform: translateX(-50%);
+  width: 1000px; height: 800px;
+  background: radial-gradient(ellipse, rgba(59,130,246,.14) 0%, transparent 68%);
+  pointer-events: none; z-index: 0;
+}
+.elementor-element-fe4f460 > .e-con-inner {
+  position: relative; z-index: 1;
+  max-width: 880px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  align-items: center !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+  gap: 24px !important;
+}
+/* Hero heading principal */
+.elementor-element-60649fd .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(30px, 4.5vw, 58px) !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  background: linear-gradient(135deg, #E0EDFF 0%, #93C5FD 50%, #60A5FA 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin: 0 !important;
+}
+/* Hero subheading */
+.elementor-element-e3aaebc .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: clamp(16px, 2vw, 21px) !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: rgba(248,250,252,.65) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.65) !important;
+  background: none !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+}
+/* Hero video */
+.elementor-element-e36d219 {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 12px 0 8px !important;
+}
+.perfmatters-lazy-youtube {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(59,130,246,.25) !important;
+  box-shadow: 0 0 80px rgba(59,130,246,.2), 0 32px 80px rgba(0,0,0,.6) !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+}
+
+/* ============================================================
+   SEÇÃO: PROBLEMA
+   ============================================================ */
+.elementor-element-4811db9 {
+  background: #060D1A !important;
+}
+.elementor-element-60f74e6 {
+  background: transparent !important;
+  width: 100% !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  --padding-top: 0 !important; --padding-bottom: 0 !important;
+  --padding-left: 0 !important; --padding-right: 0 !important;
+}
+/* Heading pergunta */
+.elementor-element-6b5be77 .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(26px, 3.5vw, 46px) !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  background: none !important;
+  text-align: center !important;
+  margin-bottom: 24px !important;
+}
+/* Heading contexto */
+.elementor-element-fab37ec .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: clamp(16px, 1.9vw, 20px) !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  color: rgba(248,250,252,.68) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.68) !important;
+  background: none !important;
+  text-align: center !important;
+  max-width: 680px !important;
+  margin: 0 auto 40px auto !important;
+}
+/* Grid pain points */
+.elementor-element-a5a8cd5 {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  --container-widget-width: 100% !important;
+  min-height: auto !important;
+}
+@media(max-width:767px) {
+  .elementor-element-a5a8cd5 { grid-template-columns: 1fr !important; }
+}
+.elementor-element-a5a8cd5 > .elementor-widget {
+  width: 100% !important;
+  max-width: 100% !important;
+  --container-widget-width: 100% !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon-box-wrapper {
+  background: rgba(200,164,106,.08) !important;
+  border: 1px solid rgba(200,164,106,.32) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+  text-align: left !important;
+  height: 100% !important;
+  transition: background .25s, border-color .25s !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon-box-wrapper:hover {
+  background: rgba(200,164,106,.14) !important;
+  border-color: rgba(231,200,146,.56) !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon-box-icon {
+  flex-shrink: 0 !important;
+  margin: 2px 0 0 0 !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon {
+  font-size: 20px !important;
+  width: auto !important; height: auto !important;
+  background: none !important; border-radius: 0 !important;
+  display: inline !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon i { color: #C8A46A !important; }
+.elementor-element-a5a8cd5 .elementor-icon-box-description {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: rgba(248,250,252,.88) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+/* Closing heading */
+.elementor-element-cf5cdf1 .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: clamp(19px, 2.3vw, 27px) !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  background: none !important;
+  text-align: center !important;
+  max-width: 680px !important;
+  margin: 40px auto 0 auto !important;
+}
+.elementor-element-cf5cdf1 .elementor-heading-title b {
+  color: #60A5FA !important;
+  -webkit-text-fill-color: #60A5FA !important;
+}
+
+/* ============================================================
+   SEÇÃO: CONTEÚDO
+   ============================================================ */
+.elementor-element-83fb64a {
+  background: linear-gradient(180deg, #060D1A 0%, #0B1729 100%) !important;
+}
+.elementor-element-55d65c8 .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(26px, 3.2vw, 44px) !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  background: none !important;
+  text-align: center !important;
+  margin-bottom: 40px !important;
+}
+.elementor-element-55d65c8 .elementor-heading-title b {
+  color: #60A5FA !important;
+  -webkit-text-fill-color: #60A5FA !important;
+}
+/* Grid 3 cards de conteúdo */
+.elementor-element-6ffc2de {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 22px !important;
+  width: 100% !important; max-width: 100% !important;
+  align-items: stretch !important;
+  min-height: auto !important;
+}
+@media(max-width:1024px) { .elementor-element-6ffc2de { grid-template-columns: repeat(2,1fr) !important; } }
+@media(max-width:767px)  { .elementor-element-6ffc2de { grid-template-columns: 1fr !important; } }
+.elementor-element-6ffc2de > .elementor-widget {
+  width: 100% !important; max-width: 100% !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-wrapper {
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 16px !important;
+  padding: 32px 28px !important;
+  height: 100% !important;
+  text-align: left !important;
+  display: flex !important; flex-direction: column !important;
+  transition: transform .3s ease, background .3s ease, border-color .3s ease, box-shadow .3s ease !important;
+  position: relative !important; overflow: hidden !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,.5), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.elementor-element-6ffc2de .elementor-icon-box-wrapper:hover {
+  background: rgba(255,255,255,.07) !important;
+  border-color: rgba(59,130,246,.3) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 56px rgba(0,0,0,.4), 0 0 0 1px rgba(59,130,246,.15) !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-wrapper:hover::before { opacity: 1; }
+.elementor-element-6ffc2de .elementor-icon-box-icon { margin-bottom: 20px !important; }
+.elementor-element-6ffc2de .elementor-icon {
+  font-size: 26px !important;
+  width: 56px !important; height: 56px !important;
+  background: rgba(59,130,246,.14) !important;
+  border-radius: 14px !important;
+  display: flex !important;
+  align-items: center !important; justify-content: center !important;
+}
+.elementor-element-6ffc2de .elementor-icon i { color: #60A5FA !important; font-size: 22px !important; }
+.elementor-element-6ffc2de .elementor-icon-box-title,
+.elementor-element-6ffc2de .elementor-icon-box-title * {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 19px !important; font-weight: 700 !important;
+  color: #F8FAFC !important; line-height: 1.3 !important; margin-bottom: 10px !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-description {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 15px !important;
+  color: rgba(248,250,252,.7) !important;
+  line-height: 1.65 !important; margin: 0 !important;
+}
+/* Subheading conteúdo */
+.elementor-element-3da0ab8 .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: clamp(17px, 1.9vw, 22px) !important;
+  font-weight: 400 !important;
+  color: rgba(248,250,252,.65) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.65) !important;
+  background: none !important;
+  text-align: center !important;
+  max-width: 640px !important;
+  margin: 40px auto 0 auto !important;
+  line-height: 1.6 !important;
+}
+
+/* ============================================================
+   SEÇÃO: IDEAL PARA VOCÊ
+   ============================================================ */
+.lp-ideal-section {
+  background: #07101F !important;
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+}
+.lp-ideal-section > .e-con-inner {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+/* Ideal heading */
+.elementor-element-ba3d7e1 .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(30px, 4vw, 50px) !important;
+  font-weight: 400 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  background: none !important;
+  text-align: center !important;
+  margin-bottom: 48px !important;
+  --gap: 0 !important;
+}
+/* Ideal grid */
+.lp-ideal-grid,
+.elementor-element-aa06c78 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  width: 100% !important; max-width: 100% !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 1 !important;
+  align-items: stretch !important;
+  min-height: auto !important;
+}
+@media(max-width:1024px) {
+  .lp-ideal-grid, .elementor-element-aa06c78 { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media(max-width:767px) {
+  .lp-ideal-grid, .elementor-element-aa06c78 { grid-template-columns: 1fr !important; }
+}
+/* Ideal cards */
+.lp-ideal-card {
+  width: 100% !important; max-width: 100% !important;
+}
+.lp-ideal-card .elementor-icon-box-wrapper {
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 16px !important;
+  padding: 28px 24px !important;
+  text-align: left !important;
+  display: flex !important; flex-direction: column !important;
+  height: 100% !important;
+  transition: transform .3s ease, background .3s ease, border-color .3s ease !important;
+}
+.lp-ideal-card .elementor-icon-box-wrapper:hover {
+  background: rgba(59,130,246,.09) !important;
+  border-color: rgba(59,130,246,.32) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,.35) !important;
+}
+.lp-ideal-card .elementor-icon-box-icon { margin-bottom: 16px !important; }
+.lp-ideal-card .elementor-icon {
+  font-size: 22px !important;
+  width: 50px !important; height: 50px !important;
+  background: rgba(59,130,246,.12) !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important; justify-content: center !important;
+}
+.lp-ideal-card .elementor-icon i { color: #60A5FA !important; font-size: 20px !important; }
+.lp-ideal-card .elementor-icon-box-title,
+.lp-ideal-card .elementor-icon-box-title *,
+/* Override estilos Elementor específicos que usam cor dark-blue */
+.elementor-element-1a1c4ee .elementor-icon-box-title,
+.elementor-element-1b86303 .elementor-icon-box-title,
+.elementor-element-119d40e .elementor-icon-box-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 17px !important; font-weight: 700 !important;
+  color: #F8FAFC !important; line-height: 1.3 !important; margin-bottom: 8px !important;
+}
+.lp-ideal-card .elementor-icon-box-description,
+.elementor-element-1a1c4ee .elementor-icon-box-description,
+.elementor-element-1b86303 .elementor-icon-box-description,
+.elementor-element-119d40e .elementor-icon-box-description {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 14px !important;
+  color: rgba(248,250,252,.65) !important;
+  line-height: 1.6 !important; margin: 0 !important;
+}
+
+/* ============================================================
+   SEÇÃO: SOBRE
+   ============================================================ */
+.elementor-element-1da7956 {
+  background: linear-gradient(160deg, #0B1A33 0%, #070E1C 100%) !important;
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+}
+.elementor-element-1da7956 > .e-con-inner {
+  max-width: 820px !important;
+  margin: 0 auto !important;
+}
+.elementor-element-e5c1f15 .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(28px, 3.5vw, 46px) !important;
+  font-weight: 400 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  background: none !important;
+  margin-bottom: 24px !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+.elementor-element-e5c1f15 .elementor-heading-title b {
+  color: #60A5FA !important;
+  -webkit-text-fill-color: #60A5FA !important;
+}
+.elementor-element-8985fb5 .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: clamp(16px, 1.7vw, 19px) !important;
+  font-weight: 400 !important;
+  color: rgba(248,250,252,.78) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.78) !important;
+  background: none !important;
+  line-height: 1.85 !important;
+  text-align: left !important;
+  border-left: 3px solid rgba(59,130,246,.55) !important;
+  padding-left: 24px !important;
+  margin: 0 !important;
+}
+.elementor-element-8985fb5 .elementor-heading-title b {
+  color: #93C5FD !important;
+  -webkit-text-fill-color: #93C5FD !important;
+  font-weight: 600 !important;
+}
+
+/* ============================================================
+   SEÇÃO: PREÇO
+   ============================================================ */
+.elementor-element-2d25ed4 {
+  background: linear-gradient(180deg, #060D1A 0%, #0C1A30 100%) !important;
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+  position: relative !important; overflow: hidden !important;
+}
+.elementor-element-2d25ed4::before {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse, rgba(59,130,246,.11) 0%, transparent 70%);
+  pointer-events: none;
+}
+.elementor-element-2d25ed4 > .e-con-inner {
+  position: relative; z-index: 1;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  align-items: center !important;
+}
+.elementor-element-e03ccc6 .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(26px, 3vw, 42px) !important;
+  font-weight: 400 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  background: none !important;
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  line-height: 1.25 !important;
+  min-height: auto !important; --min-height: auto !important;
+}
+.elementor-element-e03ccc6 .elementor-heading-title b {
+  color: #60A5FA !important;
+  -webkit-text-fill-color: #60A5FA !important;
+}
+/* Price box card */
+.lp-price-box,
+.elementor-element-ea820d9 {
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(59,130,246,.22) !important;
+  border-radius: 24px !important;
+  padding: 48px 40px !important;
+  width: 100% !important; max-width: 600px !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 1 !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  position: relative !important; overflow: hidden !important;
+  box-shadow: 0 0 100px rgba(59,130,246,.12), 0 40px 100px rgba(0,0,0,.45) !important;
+  background-image: none !important;
+  min-height: auto !important; --min-height: auto !important;
+}
+.elementor-element-ea820d9::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #3B82F6, #93C5FD, transparent);
+}
+/* Lista de features */
+.elementor-element-2061afc .elementor-widget-container ul {
+  list-style: none !important;
+  padding: 0 !important; margin: 0 0 32px !important;
+}
+.elementor-element-2061afc ul li {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 16px !important;
+  color: rgba(248,250,252,.9) !important;
+  padding: 11px 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  text-align: left !important;
+}
+/* Preço antigo */
+.lp-price-old .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 18px !important;
+  color: rgba(248,250,252,.35) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.35) !important;
+  background: none !important;
+  text-align: center !important; margin-bottom: 6px !important;
+  text-decoration: line-through !important;
+}
+/* Preço novo */
+.lp-price-new .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 20px !important;
+  color: rgba(248,250,252,.85) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.85) !important;
+  background: none !important;
+  text-align: center !important; margin-bottom: 30px !important;
+}
+.lp-price-new .elementor-heading-title b {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: 68px !important; font-weight: 400 !important;
+  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: block !important;
+  line-height: 1.1 !important;
+}
+
+/* ============================================================
+   SEÇÃO: GARANTIA
+   ============================================================ */
+.lp-garantia-section {
+  background: linear-gradient(135deg, #0B1D3A 0%, #060D1A 100%) !important;
+  border-top: 1px solid rgba(255,255,255,.05) !important;
+  border-bottom: 1px solid rgba(255,255,255,.04) !important;
+  text-align: center !important;
+}
+.lp-garantia-section > .e-con-inner {
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  align-items: center !important;
+  padding-top: 80px !important; padding-bottom: 80px !important;
+  gap: 20px !important;
+}
+.elementor-element-2356d04 .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(28px, 3.5vw, 46px) !important;
+  font-weight: 400 !important;
+  color: #60A5FA !important;
+  -webkit-text-fill-color: #60A5FA !important;
+  background: none !important;
+  text-align: center !important; margin: 0 !important;
+}
+.elementor-element-246bf65 .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: clamp(17px, 1.9vw, 21px) !important;
+  font-weight: 400 !important;
+  color: rgba(248,250,252,.75) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.75) !important;
+  background: none !important;
+  text-align: center !important; max-width: 580px !important;
+  margin: 0 auto !important; line-height: 1.65 !important;
+}
+
+/* ============================================================
+   SEÇÃO: FAQ
+   ============================================================ */
+.elementor-element-0e7673d {
+  background: #0B1729 !important;
+  border-top: 1px solid rgba(255,255,255,.04) !important;
+}
+.elementor-element-0e7673d > .e-con-inner {
+  max-width: 780px !important;
+  margin: 0 auto !important;
+}
+.elementor-element-9482d17 .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(28px, 3.5vw, 46px) !important;
+  font-weight: 400 !important;
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  background: none !important;
+  text-align: center !important; margin-bottom: 40px !important;
+}
+.elementor-element-efa09d3 {
+  width: 100% !important; max-width: 720px !important;
+  margin: 0 auto !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item { margin-bottom: 10px !important; }
+.elementor-element-efa09d3 .e-n-accordion-item-title {
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 12px !important;
+  padding: 20px 24px !important;
+  transition: background .25s, border-color .25s !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item:not([open]) > .e-n-accordion-item-title:hover {
+  background: rgba(59,130,246,.08) !important;
+  border-color: rgba(59,130,246,.25) !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item[open] > .e-n-accordion-item-title {
+  background: rgba(59,130,246,.1) !important;
+  border-color: rgba(59,130,246,.3) !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item-title-header h3 {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 17px !important; font-weight: 600 !important;
+  color: #F8FAFC !important; margin: 0 !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item-title-icon i { color: #60A5FA !important; font-size: 14px !important; }
+.elementor-element-efa09d3 .e-n-accordion-item > .e-con {
+  background: rgba(59,130,246,.05) !important;
+  border: 1px solid rgba(59,130,246,.2) !important;
+  border-top: none !important;
+  border-radius: 0 0 12px 12px !important;
+  padding: 20px 24px !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item > .e-con p {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 15px !important;
+  color: rgba(248,250,252,.8) !important;
+  line-height: 1.75 !important; margin: 0 !important;
+}
+
+/* ============================================================
+   SEÇÃO: FOOTER
+   ============================================================ */
+.elementor-element-6e1ddc6 {
+  background: #060D1A !important;
+  border-top: 1px solid rgba(255,255,255,.06) !important;
+}
+.elementor-element-6e1ddc6 > .e-con-inner {
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+}
+.elementor-element-762dde1 .elementor-heading-title,
+.elementor-element-762dde1 p {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 13px !important;
+  color: rgba(248,250,252,.35) !important;
+  -webkit-text-fill-color: rgba(248,250,252,.35) !important;
+  background: none !important;
+  text-align: center !important;
+}
+
+/* ============================================================
+   FIX: Herdanças do Elementor CSS antigo que quebram o design
+   Os data-ids abaixo foram reusados em elementos diferentes do
+   original — o CSS antigo do Elementor os trata como widget/
+   container diferente do que são agora.
+   ============================================================ */
+
+/* FIX 1 — 55d65c8: heading CONTEÚDO recebia background:#F0F4F8
+   + border-radius:20px do layout antigo (container c/ conteúdo).
+   Remove fundo branco visível e evita padding por variáveis. */
+.elementor-element-55d65c8 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  max-width: 100% !important;
+  --container-widget-width: 100% !important;
+}
+
+/* FIX 2 — e03ccc6: heading PREÇO recebia background-image de foto,
+   min-height:627px e border-radius:60px do container antigo. */
+.elementor-element-e03ccc6 {
+  background-image: none !important;
+  background-color: transparent !important;
+  min-height: auto !important;
+  --min-height: auto !important;
+  border-radius: 0 !important;
+}
+
+/* FIX 3 — efa09d3: accordion FAQ recebia estilo de image-box do
+   Elementor antigo: fundo #162D50 + borda no .elementor-widget-container */
+.elementor-element-efa09d3 > .elementor-widget-container {
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+/* FIX 4 — 96cfd85: 3º card CONTEÚDO recebia fundo #F0F4F8 + borda
+   azul do container antigo (image-box) */
+.elementor-element-96cfd85 > .elementor-widget-container {
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+/* margin-top herdado do widget-container de 131ffb8 */
+.elementor-element-131ffb8 > .elementor-widget-container {
+  margin: 0 !important;
+}
+
+/* FIX 5 — b9bbf70: seção IDEAL PARA VOCÊ recebia max-width:760px
+   do Elementor CSS (era widget de texto no design original). */
+.elementor-element-b9bbf70,
+.lp-ideal-section {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* FIX 6 — c5e2b3c: seção GARANTIA recebia --width:500px em
+   @media(min-width:768px) do Elementor CSS antigo. */
+.elementor-element-c5e2b3c,
+.lp-garantia-section {
+  --width: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* FIX 7 — Seções outer garantem largura total (previne overflow) */
+.elementor-element-83fb64a,
+.elementor-element-4811db9,
+.elementor-element-2d25ed4,
+.elementor-element-0e7673d,
+.elementor-element-1da7956,
+.elementor-element-6e1ddc6 {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* FIX 8 — Prevent max-width:280px no card 1766af9 do CONTEÚDO
+   (era button widget no design original) */
+.elementor-element-1766af9 {
+  max-width: 100% !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 1 !important;
+}
+.elementor-element-1766af9 > .elementor-widget-container {
+  margin: 0 !important;
+}
+</style>
+<style id="lp-premium-fix-v2">
+:root {
+  --lp-bg: #0d1117;
+  --lp-bg-alt: #121922;
+  --lp-surface: rgba(255, 255, 255, 0.04);
+  --lp-surface-strong: rgba(255, 255, 255, 0.07);
+  --lp-border: rgba(255, 255, 255, 0.14);
+  --lp-text: #f5efe4;
+  --lp-muted: #b9b2a5;
+  --lp-accent: #d6b27c;
+  --lp-accent-strong: #b88953;
+  --lp-danger: #d17878;
+  --lp-radius: 18px;
+  --lp-ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+body,
+.elementor-10983 {
+  background:
+    radial-gradient(950px 520px at 85% -10%, rgba(214, 178, 124, 0.10), transparent 62%),
+    radial-gradient(860px 420px at 10% 0%, rgba(129, 107, 75, 0.08), transparent 68%),
+    var(--lp-bg) !important;
+  color: var(--lp-text) !important;
+}
+
+.elementor-10983 > .e-con.e-parent {
+  --padding-top: clamp(64px, 8vw, 104px) !important;
+  --padding-bottom: clamp(64px, 8vw, 104px) !important;
+  --padding-left: 0 !important;
+  --padding-right: 0 !important;
+}
+
+.elementor-10983 > .e-con.e-parent > .e-con-inner {
+  max-width: min(1140px, 94vw) !important;
+  margin: 0 auto !important;
+  padding-inline-start: clamp(18px, 2.5vw, 30px) !important;
+  padding-inline-end: clamp(18px, 2.5vw, 30px) !important;
+}
+
+.elementor-element-fe4f460,
+.lp-garantia-section,
+.lp-transition-band,
+.elementor-element-6e1ddc6 {
+  --padding-top: 0 !important;
+  --padding-bottom: 0 !important;
+}
+/* Ideal: padding gerenciado manualmente via variáveis + propriedades diretas */
+.lp-ideal-section {
+  --padding-top: clamp(64px, 8vw, 104px) !important;
+  --padding-bottom: clamp(96px, 12vw, 160px) !important;
+}
+
+.elementor-widget-button .elementor-button-wrapper {
+  text-align: center !important;
+}
+
+.elementor-widget-button.elementor-align-justify .elementor-button {
+  width: auto !important;
+}
+
+.elementor-button {
+  background: linear-gradient(135deg, var(--lp-accent), var(--lp-accent-strong)) !important;
+  color: #1f1710 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.7px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+  transition: transform .35s var(--lp-ease), box-shadow .35s var(--lp-ease), filter .35s var(--lp-ease) !important;
+}
+
+.elementor-button::after {
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.28), transparent 60%) !important;
+}
+
+.elementor-button:hover,
+.elementor-button:focus {
+  transform: translateY(-2px) !important;
+  filter: saturate(1.05) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.30) !important;
+}
+
+.elementor-element-fe4f460 {
+  --padding-top: clamp(18px, 3vw, 34px) !important;
+  --padding-bottom: clamp(48px, 6vw, 76px) !important;
+  background: linear-gradient(165deg, #131821 0%, #0c1016 72%) !important;
+}
+
+.elementor-element-fe4f460::before {
+  background: radial-gradient(ellipse, rgba(214, 178, 124, 0.12) 0%, transparent 70%) !important;
+}
+
+.elementor-element-fe4f460 > .e-con-inner {
+  max-width: min(1080px, 92vw) !important;
+}
+
+.elementor-element-d0951f3 {
+  --width: 100% !important;
+  width: 100% !important;
+  max-width: min(900px, 92vw) !important;
+  margin: 0 auto !important;
+  --align-items: center !important;
+  align-items: center !important;
+  --gap: 12px !important;
+  --row-gap: 12px !important;
+  --column-gap: 12px !important;
+  text-align: center !important;
+}
+
+#hero .elementor-widget-container,
+#hero .elementor-heading-title,
+#hero .elementor-button-wrapper {
+  text-align: center !important;
+}
+
+#hero .elementor-heading-title {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#hero .elementor-button {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.elementor-element-60649fd .elementor-heading-title {
+  color: var(--lp-text) !important;
+  -webkit-text-fill-color: var(--lp-text) !important;
+  background: none !important;
+}
+
+.elementor-element-e3aaebc .elementor-heading-title {
+  color: var(--lp-muted) !important;
+  -webkit-text-fill-color: var(--lp-muted) !important;
+}
+
+.perfmatters-lazy-youtube {
+  border: 1px solid rgba(214, 178, 124, 0.28) !important;
+  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.50), 0 0 0 1px rgba(255, 255, 255, 0.04) inset !important;
+}
+
+.elementor-element-4811db9,
+.elementor-element-83fb64a,
+.lp-ideal-section,
+.elementor-element-1da7956,
+.elementor-element-2d25ed4,
+.lp-garantia-section,
+.elementor-element-0e7673d {
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.elementor-element-4811db9 { background: #121923 !important; }
+.elementor-element-83fb64a { background: #0f151d !important; }
+.lp-ideal-section { background: #121720 !important; }
+.elementor-element-1da7956 { background: linear-gradient(150deg, #181620 0%, #11161d 75%) !important; }
+.elementor-element-2d25ed4 { background: linear-gradient(180deg, #0f141d 0%, #17131d 100%) !important; }
+.lp-garantia-section { background: linear-gradient(145deg, #19141d 0%, #11171f 100%) !important; }
+.elementor-element-0e7673d { background: #121922 !important; }
+.elementor-element-6e1ddc6 { background: #0c1016 !important; border-top: 1px solid rgba(255, 255, 255, 0.08) !important; }
+
+.elementor-element-60f74e6 {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid var(--lp-border) !important;
+  border-radius: 24px !important;
+  max-width: 960px !important;
+  margin: 0 auto !important;
+  --padding-top: clamp(34px, 4.5vw, 56px) !important;
+  --padding-bottom: clamp(34px, 4.5vw, 56px) !important;
+  --padding-left: clamp(20px, 3vw, 36px) !important;
+  --padding-right: clamp(20px, 3vw, 36px) !important;
+  --gap: 24px !important;
+  --row-gap: 24px !important;
+  --column-gap: 24px !important;
+}
+
+.elementor-element-6b5be77 .elementor-heading-title,
+.elementor-element-55d65c8 .elementor-heading-title,
+.elementor-element-ba3d7e1 .elementor-heading-title,
+.elementor-element-e5c1f15 .elementor-heading-title,
+.elementor-element-e03ccc6 .elementor-heading-title,
+.elementor-element-9482d17 .elementor-heading-title,
+.elementor-element-cf5cdf1 .elementor-heading-title {
+  color: var(--lp-text) !important;
+  -webkit-text-fill-color: var(--lp-text) !important;
+  background: none !important;
+}
+
+.elementor-element-fab37ec .elementor-heading-title,
+.elementor-element-3da0ab8 .elementor-heading-title,
+.elementor-element-8985fb5 .elementor-heading-title,
+.elementor-element-246bf65 .elementor-heading-title {
+  color: var(--lp-muted) !important;
+  -webkit-text-fill-color: var(--lp-muted) !important;
+  background: none !important;
+}
+
+.elementor-element-cf5cdf1 .elementor-heading-title b,
+.elementor-element-55d65c8 .elementor-heading-title b,
+.elementor-element-e5c1f15 .elementor-heading-title b,
+.elementor-element-e03ccc6 .elementor-heading-title b,
+.lp-price-new .elementor-heading-title b {
+  color: var(--lp-accent) !important;
+  -webkit-text-fill-color: var(--lp-accent) !important;
+  background: none !important;
+}
+
+.elementor-element-a5a8cd5,
+.elementor-element-6ffc2de,
+.elementor-element-aa06c78 {
+  width: 100% !important;
+  max-width: 100% !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 1 !important;
+}
+
+.elementor-element-55d65c8 {
+  --display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: auto !important;
+  --min-height: auto !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.elementor-element-55d65c8 > .elementor-widget-container {
+  margin: 0 0 28px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.elementor-element-a5a8cd5 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+.elementor-element-a5a8cd5 .elementor-icon-box-wrapper {
+  background: rgba(200, 164, 106, 0.10) !important;
+  border: 1px solid rgba(200, 164, 106, 0.36) !important;
+}
+
+.elementor-element-a5a8cd5 .elementor-icon i { color: var(--lp-accent) !important; }
+.elementor-element-a5a8cd5 .elementor-icon-box-description {
+  color: #C8A46A !important;
+  -webkit-text-fill-color: #C8A46A !important;
+}
+
+.elementor-element-6ffc2de,
+.elementor-element-aa06c78 {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+}
+
+.elementor-element-aa06c78 {
+  max-width: min(1140px, 94vw) !important;
+  margin: 0 auto !important;
+  padding-inline-start: clamp(18px, 2.5vw, 30px) !important;
+  padding-inline-end: clamp(18px, 2.5vw, 30px) !important;
+}
+
+.elementor-element-a5a8cd5 > .elementor-widget,
+.elementor-element-6ffc2de > .elementor-widget,
+.elementor-element-aa06c78 > .elementor-widget {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.elementor-element-a5a8cd5 > .elementor-widget > .elementor-widget-container,
+.elementor-element-6ffc2de > .elementor-widget > .elementor-widget-container,
+.elementor-element-aa06c78 > .elementor-widget > .elementor-widget-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.elementor-element-6ffc2de .elementor-icon-box-wrapper,
+.lp-ideal-card .elementor-icon-box-wrapper {
+  background: var(--lp-surface) !important;
+  border: 1px solid var(--lp-border) !important;
+  border-radius: var(--lp-radius) !important;
+  transition: transform .35s var(--lp-ease), background .35s var(--lp-ease), border-color .35s var(--lp-ease), box-shadow .35s var(--lp-ease) !important;
+}
+
+.elementor-element-6ffc2de .elementor-icon-box-wrapper:hover,
+.lp-ideal-card .elementor-icon-box-wrapper:hover {
+  background: var(--lp-surface-strong) !important;
+  border-color: rgba(214, 178, 124, 0.40) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35) !important;
+}
+
+.elementor-element-6ffc2de .elementor-icon,
+.lp-ideal-card .elementor-icon {
+  background: rgba(214, 178, 124, 0.16) !important;
+}
+
+.elementor-element-6ffc2de .elementor-icon i,
+.lp-ideal-card .elementor-icon i,
+.elementor-element-efa09d3 .e-n-accordion-item-title-icon i {
+  color: var(--lp-accent) !important;
+}
+
+.elementor-element-6ffc2de .elementor-icon-box-title,
+.elementor-element-6ffc2de .elementor-icon-box-title *,
+.lp-ideal-card .elementor-icon-box-title,
+.lp-ideal-card .elementor-icon-box-title * {
+  color: var(--lp-text) !important;
+}
+
+.elementor-element-6ffc2de .elementor-icon-box-description,
+.lp-ideal-card .elementor-icon-box-description {
+  color: var(--lp-muted) !important;
+}
+
+
+
+.lp-ideal-section > .e-con-inner {
+  max-width: min(1140px, 94vw) !important;
+  padding-inline-start: clamp(18px, 2.5vw, 30px) !important;
+  padding-inline-end: clamp(18px, 2.5vw, 30px) !important;
+  padding-top: clamp(64px, 8vw, 104px) !important;
+  padding-bottom: clamp(96px, 12vw, 160px) !important;
+  padding-block-start: clamp(64px, 8vw, 104px) !important;
+  padding-block-end: clamp(96px, 12vw, 160px) !important;
+}
+
+/* Força respiro real abaixo do grid "Ideal para voce que" */
+#ideal .elementor-element-aa06c78,
+#ideal .lp-ideal-grid {
+  margin: 0 auto clamp(96px, 12vw, 170px) !important;
+}
+
+.elementor-element-ea820d9,
+.lp-price-box {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(214, 178, 124, 0.36) !important;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.40) !important;
+}
+
+.elementor-element-ea820d9::before {
+  background: linear-gradient(90deg, transparent, var(--lp-accent), transparent) !important;
+}
+
+.lp-price-old .elementor-heading-title { color: rgba(245, 239, 228, 0.42) !important; -webkit-text-fill-color: rgba(245, 239, 228, 0.42) !important; }
+.lp-price-new .elementor-heading-title { color: var(--lp-text) !important; -webkit-text-fill-color: var(--lp-text) !important; }
+
+.lp-garantia-section {
+  --width: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.lp-garantia-section > .e-con-inner {
+  max-width: min(900px, 94vw) !important;
+  margin: 0 auto !important;
+  padding-inline-start: clamp(18px, 2.5vw, 30px) !important;
+  padding-inline-end: clamp(18px, 2.5vw, 30px) !important;
+}
+
+.elementor-element-2356d04 .elementor-heading-title {
+  color: var(--lp-accent) !important;
+  -webkit-text-fill-color: var(--lp-accent) !important;
+}
+
+.elementor-element-efa09d3 .e-n-accordion-item-title {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid var(--lp-border) !important;
+  transition: background .30s var(--lp-ease), border-color .30s var(--lp-ease) !important;
+}
+
+.elementor-element-efa09d3,
+.elementor-element-efa09d3 > .elementor-widget-container,
+.elementor-element-efa09d3 .e-n-accordion {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.elementor-element-efa09d3 .e-n-accordion-item[open] > .e-n-accordion-item-title {
+  background: rgba(214, 178, 124, 0.10) !important;
+  border-color: rgba(214, 178, 124, 0.34) !important;
+}
+
+.elementor-element-efa09d3 .e-n-accordion-item > .e-con {
+  background: rgba(214, 178, 124, 0.07) !important;
+  border: 1px solid rgba(214, 178, 124, 0.24) !important;
+}
+
+.elementor-element-efa09d3 .e-n-accordion-item-title-header h3,
+.elementor-element-efa09d3 .e-n-accordion-item > .e-con p {
+  color: var(--lp-text) !important;
+}
+
+.elementor-element-762dde1 .elementor-heading-title,
+.elementor-element-762dde1 p {
+  color: rgba(245, 239, 228, 0.50) !important;
+  -webkit-text-fill-color: rgba(245, 239, 228, 0.50) !important;
+}
+
+@media (max-width: 1024px) {
+  .elementor-element-6ffc2de,
+  .elementor-element-aa06c78 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 767px) {
+  .elementor-widget-button.elementor-align-justify .elementor-button { width: 100% !important; }
+  .elementor-element-a5a8cd5,
+  .elementor-element-6ffc2de,
+  .elementor-element-aa06c78 { grid-template-columns: 1fr !important; }
+  .elementor-element-60f74e6 { border-radius: 16px !important; }
+  .lp-price-new .elementor-heading-title b { font-size: clamp(44px, 12vw, 60px) !important; }
+}
+</style>
+
+<style id="lp-vivid">
+/* ============================================================
+   LP COLOR SYSTEM — Azul escuro · Azul médio · Dourado · Branco
+   Seções claras e escuras alternadas para máximo contraste
+   ============================================================ */
+
+:root {
+  --lp-blue-deep:  #090F16;
+  --lp-blue-rich:  #111B28;
+  --lp-blue-mid:   #24364F;
+  --lp-white-bg:   #EEF3FB;
+  --lp-warm-bg:    #F7F3EB;
+  --lp-gold:       #C8A46A;
+  --lp-gold-light: #E7C892;
+  --lp-text-dark:  #101826;
+  --lp-muted-dark: #4A607B;
+}
+
+/* =====================================================
+   BODY — base escura neutra
+   ===================================================== */
+body,
+.elementor-10983 {
+  background: var(--lp-blue-deep) !important;
+  color: #EDF3FF !important;
+}
+
+/* =====================================================
+   HERO — azul profundo + glow azul no topo (ESCURO)
+   ===================================================== */
+.elementor-element-fe4f460 {
+  background:
+    radial-gradient(880px 540px at 52% -14%, rgba(200, 164, 106, 0.24), transparent 60%),
+    radial-gradient(720px 460px at 10% 12%, rgba(155, 184, 220, 0.12), transparent 66%),
+    linear-gradient(170deg, #101723 0%, #090F16 100%) !important;
+}
+
+/* Título hero: branco puro brilhante */
+.elementor-element-60649fd .elementor-heading-title {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F4E8D2 52%, #D6E4F9 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+.elementor-element-e3aaebc .elementor-heading-title {
+  color: rgba(214, 227, 247, 0.85) !important;
+  -webkit-text-fill-color: rgba(214, 227, 247, 0.85) !important;
+  background: none !important;
+}
+
+/* Vídeo: borda azul com glow */
+.perfmatters-lazy-youtube {
+  border: 1px solid rgba(200, 164, 106, 0.42) !important;
+  box-shadow:
+    0 0  70px rgba(200, 164, 106, 0.18),
+    0 30px 70px rgba(0, 0, 0, 0.55) !important;
+}
+.elementor-element-e36d219 .perfmatters-lazy-youtube {
+  position: relative !important;
+  width: min(100%, 720px) !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  padding-bottom: 0 !important;
+  overflow: hidden !important;
+}
+.elementor-element-e36d219 .perfmatters-lazy-youtube img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transform: scale(1.05) !important;
+}
+.elementor-element-e36d219 .perfmatters-lazy-youtube iframe {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 108% !important;
+  height: 108% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* =====================================================
+   PROBLEMA — fundo branco azulado (CLARO)
+   ===================================================== */
+.elementor-element-4811db9 {
+  background:
+    radial-gradient(820px 460px at 92% 50%, rgba(126, 154, 194, 0.10), transparent 62%),
+    #EDF2FB !important;
+  border-top: none !important;
+}
+
+/* Card interno: branco com linha de topo azul */
+.elementor-element-60f74e6 {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(200, 164, 106, 0.22) !important;
+  box-shadow:
+    0 2px 40px rgba(112, 136, 168, 0.08),
+    0 18px 50px rgba(0, 0, 0, 0.07) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.elementor-element-60f74e6::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #B9955F, #D8B57D, #D7E5F8);
+  border-radius: 24px 24px 0 0;
+  pointer-events: none;
+}
+
+/* Textos da PROBLEMA sobre fundo claro */
+.elementor-element-6b5be77 .elementor-heading-title {
+  color: #0D1829 !important;
+  -webkit-text-fill-color: #0D1829 !important;
+  background: none !important;
+}
+.elementor-element-fab37ec .elementor-heading-title {
+  color: #3A527A !important;
+  -webkit-text-fill-color: #3A527A !important;
+  background: none !important;
+}
+.elementor-element-cf5cdf1 .elementor-heading-title {
+  color: #0D1829 !important;
+  -webkit-text-fill-color: #0D1829 !important;
+  background: none !important;
+}
+.elementor-element-cf5cdf1,
+.elementor-element-cf5cdf1 > .elementor-widget-container,
+.elementor-element-cf5cdf1 .elementor-heading-title {
+  text-align: center !important;
+}
+.elementor-element-cf5cdf1 {
+  width: 100% !important;
+  max-width: min(860px, 100%) !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 0 !important;
+  align-self: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.elementor-element-cf5cdf1 > .elementor-widget-container {
+  width: 100% !important;
+  margin: 40px auto 0 !important;
+}
+.elementor-element-cf5cdf1 .elementor-heading-title {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.elementor-element-cf5cdf1 .elementor-heading-title b {
+  color: #B9955F !important;
+  -webkit-text-fill-color: #B9955F !important;
+  background: none !important;
+}
+
+/* Pain-point cards sobre fundo claro */
+.elementor-element-a5a8cd5 .elementor-icon-box-wrapper {
+  background: rgba(200, 164, 106, 0.08) !important;
+  border: 1px solid rgba(200, 164, 106, 0.34) !important;
+  box-shadow: 0 4px 16px rgba(200, 164, 106, 0.12) !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon-box-wrapper:hover {
+  background: rgba(200, 164, 106, 0.14) !important;
+  border-color: rgba(231, 200, 146, 0.58) !important;
+  box-shadow: 0 8px 26px rgba(200, 164, 106, 0.22) !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon-box-description {
+  color: #C8A46A !important;
+  -webkit-text-fill-color: #C8A46A !important;
+}
+.elementor-element-a5a8cd5 .elementor-icon i {
+  color: #C8A46A !important;
+  filter: none !important;
+}
+
+/* =====================================================
+   CONTEÚDO — azul rico profundo (ESCURO)
+   ===================================================== */
+.elementor-element-83fb64a {
+  background:
+    radial-gradient(700px 500px at 88% 18%, rgba(136, 166, 209, 0.16), transparent 62%),
+    radial-gradient(500px 350px at 8% 80%, rgba(200, 164, 106, 0.20), transparent 65%),
+    linear-gradient(160deg, #131C2A 0%, #0B1118 100%) !important;
+  border-top: none !important;
+}
+
+.elementor-element-55d65c8 .elementor-heading-title {
+  color: #F4F7FF !important;
+  -webkit-text-fill-color: #F4F7FF !important;
+  background: none !important;
+}
+.elementor-element-55d65c8 .elementor-heading-title b {
+  background: linear-gradient(135deg, #E7C892 0%, #C8A46A 55%, #D2E1F7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Cards conteúdo: glass branco sobre azul escuro */
+.elementor-element-6ffc2de {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px) !important;
+  column-gap: 28px !important;
+  row-gap: 18px !important;
+  align-items: start !important;
+}
+.elementor-element-6ffc2de > .elementor-element-131ffb8,
+.elementor-element-6ffc2de > .elementor-element-1766af9,
+.elementor-element-6ffc2de > .elementor-element-96cfd85 {
+  grid-column: 1 !important;
+}
+.lp-book-showcase {
+  grid-column: 2 !important;
+  grid-row: 1 / span 3 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  margin: 0 !important;
+}
+.lp-book-showcase > .elementor-widget-container {
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  text-align: center !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  background: transparent !important;
+  border: none !important;
+}
+.lp-book-stage {
+  width: 100% !important;
+  perspective: 1200px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding: 0 10px !important;
+  cursor: default !important;
+}
+.lp-book-3d {
+  position: relative !important;
+  width: clamp(210px, 30vw, 300px) !important;
+  transform-style: preserve-3d !important;
+  will-change: transform !important;
+  transform: translate3d(0, 0, 0) rotateX(4.5deg) rotateY(-14deg) !important;
+}
+.lp-book-3d::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 8% !important;
+  right: 8% !important;
+  bottom: -12% !important;
+  height: 22% !important;
+  background: radial-gradient(ellipse, rgba(200, 164, 106, .34) 0%, rgba(200, 164, 106, .12) 46%, transparent 76%) !important;
+  filter: blur(10px) !important;
+  transform: translateZ(-30px) !important;
+  pointer-events: none !important;
+}
+.lp-book-cover {
+  position: relative !important;
+  width: 100% !important;
+  max-width: clamp(210px, 30vw, 300px) !important;
+  margin: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  transform: translateZ(18px) !important;
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, .45),
+    0 0 0 1px rgba(214, 178, 124, .42),
+    inset 0 1px 0 rgba(255, 255, 255, .24) !important;
+  transition: box-shadow .45s ease !important;
+}
+.lp-book-cover::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(120deg, rgba(255,255,255,.24), rgba(255,255,255,0) 38%) !important;
+  pointer-events: none !important;
+}
+.lp-book-stage:hover .lp-book-cover {
+  box-shadow:
+    0 22px 46px rgba(0, 0, 0, .5),
+    0 0 0 1px rgba(214, 178, 124, .54),
+    inset 0 1px 0 rgba(255, 255, 255, .28) !important;
+}
+.lp-book-cover img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  display: block !important;
+  backface-visibility: hidden !important;
+}
+@media (max-width: 1024px) {
+  .elementor-element-6ffc2de {
+    grid-template-columns: 1fr !important;
+  }
+  .elementor-element-6ffc2de > .elementor-element-131ffb8,
+  .elementor-element-6ffc2de > .elementor-element-1766af9,
+  .elementor-element-6ffc2de > .elementor-element-96cfd85,
+  .lp-book-showcase {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+    height: auto !important;
+    display: block !important;
+  }
+  .lp-book-showcase {
+    margin-top: 14px !important;
+  }
+  .lp-book-showcase > .elementor-widget-container {
+    display: block !important;
+    height: auto !important;
+  }
+  .lp-book-stage {
+    justify-content: center !important;
+    padding: 6px 10px 4px !important;
+  }
+}
+.elementor-element-6ffc2de .elementor-icon-box-wrapper {
+  background: linear-gradient(158deg, rgba(20, 29, 42, 0.88) 0%, rgba(15, 24, 35, 0.95) 100%) !important;
+  border: 1px solid rgba(200, 164, 106, 0.36) !important;
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-wrapper::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0; left: 0; right: 0; height: 2px !important;
+  background: linear-gradient(90deg, transparent 5%, rgba(200, 164, 106, 0.86) 55%, rgba(210, 225, 247, 0.60) 78%, transparent 95%) !important;
+  opacity: 1 !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-wrapper:hover {
+  background: linear-gradient(158deg, rgba(26, 38, 53, 0.92) 0%, rgba(18, 28, 41, 0.98) 100%) !important;
+  border-color: rgba(200, 164, 106, 0.64) !important;
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(200, 164, 106, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+  transform: translateY(-5px) !important;
+}
+.elementor-element-6ffc2de .elementor-icon {
+  background: rgba(200, 164, 106, 0.22) !important;
+  box-shadow: 0 0 18px rgba(200, 164, 106, 0.24) !important;
+}
+.elementor-element-6ffc2de .elementor-icon i {
+  color: #E6C892 !important;
+  filter: drop-shadow(0 0 4px rgba(200, 164, 106, 0.45)) !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-title,
+.elementor-element-6ffc2de .elementor-icon-box-title * {
+  color: #EEF4FF !important;
+  -webkit-text-fill-color: #EEF4FF !important;
+}
+.elementor-element-6ffc2de .elementor-icon-box-description {
+  color: rgba(209, 223, 244, 0.82) !important;
+  -webkit-text-fill-color: rgba(209, 223, 244, 0.82) !important;
+}
+.elementor-element-3da0ab8 .elementor-heading-title {
+  color: rgba(205, 220, 242, 0.80) !important;
+  -webkit-text-fill-color: rgba(205, 220, 242, 0.80) !important;
+  background: none !important;
+}
+
+/* =====================================================
+   IDEAL PARA VOCÊ — branco quente (CLARO)
+   ===================================================== */
+.lp-ideal-section {
+  background: #020b18 !important;
+  background-image: none !important;
+  border-top: none !important;
+}
+.lp-ideal-section::before,
+.lp-ideal-section::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Heading sobre fundo claro */
+.elementor-element-ba3d7e1 .elementor-heading-title {
+  color: #D6B27C !important;
+  -webkit-text-fill-color: #D6B27C !important;
+  background: none !important;
+  filter: drop-shadow(0 0 14px rgba(214, 178, 124, 0.22)) !important;
+}
+/* Reset de heranças antigas do Elementor nos IDs da seção IDEAL */
+.elementor-element-ba3d7e1 {
+  width: 100% !important;
+  max-width: 100% !important;
+  --display: block !important;
+  --align-self: center !important;
+  align-self: center !important;
+  text-align: center !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+.elementor-element-ba3d7e1 > .elementor-widget-container {
+  margin: 0 0 30px !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+.elementor-element-0986cc3,
+.elementor-element-0a1f050,
+.elementor-element-0cbf094,
+.elementor-element-119d40e,
+.elementor-element-1a1c4ee,
+.elementor-element-1b86303 {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 0 !important;
+  --align-self: stretch !important;
+  align-self: stretch !important;
+  --flex-grow: 0 !important;
+  --flex-shrink: 1 !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+.elementor-element-0986cc3 > .elementor-widget-container,
+.elementor-element-0a1f050 > .elementor-widget-container,
+.elementor-element-0cbf094 > .elementor-widget-container,
+.elementor-element-119d40e > .elementor-widget-container,
+.elementor-element-1a1c4ee > .elementor-widget-container,
+.elementor-element-1b86303 > .elementor-widget-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* Cards: brancos com borda + linha dourada */
+.lp-ideal-card .elementor-icon-box-wrapper {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(214, 178, 124, 0.42) !important;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.lp-ideal-card .elementor-icon-box-wrapper::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0; left: 0; right: 0; height: 2px !important;
+  background: linear-gradient(90deg, transparent 5%, rgba(214, 178, 124, 0.80) 50%, transparent 95%) !important;
+  opacity: 1 !important;
+}
+.lp-ideal-card .elementor-icon-box-wrapper:hover {
+  background: #FFF9F0 !important;
+  border-color: rgba(214, 178, 124, 0.64) !important;
+  box-shadow:
+    0 12px 34px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(214, 178, 124, 0.14) !important;
+  transform: translateY(-4px) !important;
+}
+.lp-ideal-card .elementor-icon {
+  background: rgba(214, 178, 124, 0.20) !important;
+  box-shadow: inset 0 0 0 1px rgba(214, 178, 124, 0.35) !important;
+}
+.lp-ideal-card .elementor-icon i {
+  color: #9A6E28 !important;
+  filter: none !important;
+}
+.lp-ideal-card .elementor-icon-box-title,
+.lp-ideal-card .elementor-icon-box-title *,
+.elementor-element-1a1c4ee .elementor-icon-box-title,
+.elementor-element-1b86303 .elementor-icon-box-title,
+.elementor-element-119d40e .elementor-icon-box-title {
+  color: #0D1829 !important;
+  -webkit-text-fill-color: #0D1829 !important;
+}
+.lp-ideal-card .elementor-icon-box-description,
+.elementor-element-1a1c4ee .elementor-icon-box-description,
+.elementor-element-1b86303 .elementor-icon-box-description,
+.elementor-element-119d40e .elementor-icon-box-description {
+  color: #4A607A !important;
+  -webkit-text-fill-color: #4A607A !important;
+}
+
+/* Evita vazamentos visuais laterais (quadrinhos brancos nas bordas) */
+html,
+body,
+.elementor-10983 {
+  overflow-x: clip !important;
+}
+.elementor-10983 .e-con,
+.elementor-10983 .e-con-inner {
+  overflow-x: clip !important;
+  scrollbar-width: none !important;
+}
+html,
+body,
+body * {
+  scrollbar-width: none !important;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+body *::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+.elementor-10983 .e-con::-webkit-scrollbar,
+.elementor-10983 .e-con-inner::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+.elementor-10983 *::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+.lp-ideal-section,
+.lp-ideal-section > .e-con-inner,
+.lp-ideal-grid {
+  overflow-x: clip !important;
+}
+.elementor-element-b9bbf70,
+.elementor-element-aa06c78,
+.lp-ideal-grid {
+  --overflow: visible !important;
+  overflow: visible !important;
+  scrollbar-width: none !important;
+}
+.elementor-element-b9bbf70::-webkit-scrollbar,
+.elementor-element-aa06c78::-webkit-scrollbar,
+.lp-ideal-grid::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+/* Sem camadas extras na lateral */
+.elementor-element-1da7956::before,
+.elementor-element-1da7956::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* =====================================================
+   SOBRE — azul médio (ESCURO)
+   ===================================================== */
+.elementor-element-1da7956 {
+  background:
+    radial-gradient(600px 400px at 90% 30%, rgba(136, 166, 209, 0.12), transparent 60%),
+    linear-gradient(150deg, #1A2533 0%, #101824 100%) !important;
+  border-top: none !important;
+  --padding-top: clamp(80px, 10vw, 140px) !important;
+  --padding-bottom: 80px !important;
+}
+.elementor-element-1da7956 > .e-con-inner {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 350px) !important;
+  column-gap: 32px !important;
+  row-gap: 16px !important;
+  align-items: center !important;
+  max-width: min(1120px, 94vw) !important;
+}
+.elementor-element-e5c1f15,
+.elementor-element-8985fb5 {
+  grid-column: 1 !important;
+}
+.lp-mariana-photo {
+  grid-column: 2 !important;
+  grid-row: 1 / span 2 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  width: 100% !important;
+  max-width: 340px !important;
+}
+.lp-mariana-photo > .elementor-widget-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.lp-mariana-photo img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: cover !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(214, 178, 124, 0.42) !important;
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+}
+@media (max-width: 1024px) {
+  .elementor-element-1da7956 > .e-con-inner {
+    grid-template-columns: 1fr !important;
+  }
+  .lp-mariana-photo {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    justify-self: center !important;
+    margin-top: 8px !important;
+  }
+}
+
+.elementor-element-e5c1f15 .elementor-heading-title {
+  color: #EFF6FF !important;
+  -webkit-text-fill-color: #EFF6FF !important;
+  background: none !important;
+}
+.elementor-element-e5c1f15 .elementor-heading-title b {
+  color: #D6B27C !important;
+  -webkit-text-fill-color: #D6B27C !important;
+  background: none !important;
+}
+.elementor-element-8985fb5 .elementor-heading-title {
+  border-left: 3px solid rgba(214, 178, 124, 0.72) !important;
+  padding-left: 24px !important;
+  color: rgba(208, 221, 242, 0.90) !important;
+  -webkit-text-fill-color: rgba(208, 221, 242, 0.90) !important;
+  background: none !important;
+}
+.elementor-element-8985fb5 .elementor-heading-title b {
+  color: #D6B27C !important;
+  -webkit-text-fill-color: #D6B27C !important;
+  background: none !important;
+}
+/* ── FAIXAS CRUZADAS — estático ─────────────────────── */
+.lp-transition-band {
+  background: transparent !important;
+  border: none !important;
+  position: relative !important;
+  overflow: visible !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  margin-block: 0 !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+  --padding-top: 0 !important;
+  --padding-bottom: 0 !important;
+}
+.lp-transition-band::before { content: none !important; }
+.lp-transition-band::after {
+  content: none !important;
+}
+.lp-transition-band > .e-con-inner {
+  height: 0 !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+.lp-transition-marquee {
+  margin-bottom: 0 !important;
+}
+.lp-transition-marquee > .elementor-widget-container {
+  height: 0 !important;
+  width: 100% !important;
+  position: relative !important;
+  overflow: visible !important;
+  margin: 0 !important;
+}
+/* Cada faixa cobre toda a tela com 200vw */
+.lp-xband {
+  position: absolute !important;
+  top: -28px !important;
+  left: calc(50% - 100vw) !important;
+  width: 200vw !important;
+  height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  background: linear-gradient(90deg, #BFAF96 0%, #D3C1A6 52%, #BFAF96 100%) !important;
+  border-top: 1px solid rgba(246, 236, 219, 0.88) !important;
+  border-bottom: 1px solid rgba(162, 133, 90, 0.58) !important;
+  box-shadow: none !important;
+  z-index: 3 !important;
+}
+.lp-xband::before {
+  content: none !important;
+}
+.lp-xband-a {
+  transform: translateY(-8px) rotate(-2.4deg) !important;
+  z-index: 4 !important;
+}
+.lp-xband-b {
+  transform: translateY(8px) rotate(2.4deg) !important;
+  z-index: 2 !important;
+  filter: none !important;
+  opacity: 0.96 !important;
+}
+.lp-xband-text {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.4px !important;
+  color: #F7FAFF !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  text-shadow: 0 1px 3px rgba(35, 24, 10, 0.30) !important;
+  padding-left: 52px !important;
+}
+.lp-xband-b .lp-xband-text {
+  opacity: 0.18 !important;
+}
+@media (max-width: 767px) {
+  .lp-xband {
+    top: -20px !important;
+    height: 40px !important;
+  }
+  .lp-xband-a { transform: translateY(-6px) rotate(-2.4deg) !important; }
+  .lp-xband-b { transform: translateY(6px) rotate(2.4deg) !important; }
+  .lp-xband-text {
+    font-size: 11px !important;
+    letter-spacing: 1.2px !important;
+    padding-left: 30px !important;
+  }
+}
+
+/* =====================================================
+   PREÇO — azul profundo + dourado (ESCURO)
+   ===================================================== */
+.elementor-element-2d25ed4 {
+  background:
+    radial-gradient(700px 560px at 50% 92%, rgba(200, 164, 106, 0.20), transparent 58%),
+    radial-gradient(650px 380px at 50% -10%, rgba(138, 168, 210, 0.14), transparent 62%),
+    linear-gradient(180deg, #0F1724 0%, #1A1620 100%) !important;
+  border-top: none !important;
+}
+
+.elementor-element-e03ccc6 .elementor-heading-title {
+  color: #EFF6FF !important;
+  -webkit-text-fill-color: #EFF6FF !important;
+  background: none !important;
+}
+.elementor-element-e03ccc6 .elementor-heading-title b {
+  background: linear-gradient(135deg, #E7C892 0%, #C8A46A 58%, #D4E3F8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Price box: glass com borda dourada, glow duplo */
+.elementor-element-ea820d9,
+.lp-price-box {
+  background: linear-gradient(158deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%) !important;
+  border: 1px solid rgba(214, 178, 124, 0.55) !important;
+  box-shadow:
+    0 0  90px rgba(214, 178, 124, 0.16),
+    0 0 120px rgba(160, 186, 224, 0.06),
+    0 40px 100px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+.elementor-element-ea820d9::before {
+  background: linear-gradient(90deg, transparent 5%, #D6B27C 35%, #D5E3F8 65%, #D6B27C 85%, transparent 95%) !important;
+  height: 2px !important;
+  opacity: 1 !important;
+}
+
+/* Valor destaque: gradiente ouro → azul claro */
+.lp-price-new .elementor-heading-title b {
+  background: linear-gradient(135deg, #F5D98A 0%, #D6B27C 50%, #D3E2F8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 0 16px rgba(214, 178, 124, 0.42)) !important;
+}
+/* Garante alinhamento perfeito entre preço antigo e novo */
+.lp-price-old,
+.lp-price-new {
+  width: 100% !important;
+  text-align: center !important;
+}
+.lp-price-old > .elementor-widget-container,
+.lp-price-new > .elementor-widget-container {
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.lp-price-old .elementor-heading-title,
+.lp-price-new .elementor-heading-title {
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+.elementor-element-2061afc ul li {
+  color: rgba(217, 229, 247, 0.90) !important;
+  border-bottom-color: rgba(214, 178, 124, 0.16) !important;
+}
+.lp-price-features li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+}
+.lp-price-features li + li {
+  margin-top: 2px !important;
+}
+.lp-topic-icon {
+  width: 1.2em !important;
+  min-width: 1.2em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #E7C892 !important;
+  line-height: 1 !important;
+  margin-top: 4px !important;
+}
+.lp-topic-icon i {
+  font-size: 14px !important;
+}
+
+/* =====================================================
+   GARANTIA — azul médio → profundo (ESCURO)
+   ===================================================== */
+.lp-garantia-section {
+  background:
+    radial-gradient(600px 500px at 50% 55%, rgba(214, 178, 124, 0.17), transparent 60%),
+    linear-gradient(145deg, #1D1720 0%, #141C2A 58%, #0D141D 100%) !important;
+  border-top: none !important;
+}
+.lp-garantia-3d {
+  width: 100% !important;
+  margin: 6px 0 8px !important;
+}
+.lp-garantia-3d > .elementor-widget-container {
+  display: flex !important;
+  justify-content: center !important;
+  perspective: 1100px !important;
+}
+.lp-garantia-seal {
+  width: clamp(108px, 14vw, 136px) !important;
+  aspect-ratio: 1 / 1 !important;
+  position: relative !important;
+  transform-style: preserve-3d !important;
+  animation: lpGarantiaFloat 5.6s ease-in-out infinite !important;
+}
+.lp-garantia-seal::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  background: linear-gradient(145deg, #F1D797 0%, #D6B27C 52%, #A77943 100%) !important;
+  border: 1px solid rgba(255, 243, 219, 0.42) !important;
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.34),
+    0 0 24px rgba(214, 178, 124, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.48) !important;
+  transform: translateZ(18px) !important;
+}
+.lp-garantia-seal::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto 12% -18% 12% !important;
+  height: 26% !important;
+  border-radius: 50% !important;
+  background: radial-gradient(ellipse, rgba(214, 178, 124, 0.44) 0%, rgba(214, 178, 124, 0.16) 45%, transparent 78%) !important;
+  filter: blur(10px) !important;
+  transform: translateZ(-36px) !important;
+}
+.lp-garantia-seal-inner {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #11243D !important;
+  transform: translateZ(32px) !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+.lp-garantia-seal-num {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: clamp(34px, 5.2vw, 48px) !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+.lp-garantia-seal-label {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1.4px !important;
+  font-weight: 700 !important;
+}
+@keyframes lpGarantiaFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotateX(6deg) rotateY(-14deg); }
+  50% { transform: translate3d(0, -8px, 0) rotateX(10deg) rotateY(12deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-garantia-seal {
+    animation: none !important;
+    transform: translate3d(0, 0, 0) rotateX(6deg) rotateY(-14deg) !important;
+  }
+}
+
+/* Título garantia: gradiente dourado brilhante */
+.elementor-element-2356d04 .elementor-heading-title {
+  background: linear-gradient(140deg, #F0D080 0%, #D6B27C 52%, #B89460 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 0 26px rgba(214, 178, 124, 0.40)) !important;
+}
+.elementor-element-246bf65 .elementor-heading-title {
+  color: rgba(214, 226, 244, 0.84) !important;
+  -webkit-text-fill-color: rgba(214, 226, 244, 0.84) !important;
+  background: none !important;
+}
+
+/* =====================================================
+   FAQ — branco azulado (CLARO)
+   ===================================================== */
+.elementor-element-0e7673d {
+  background:
+    radial-gradient(700px 400px at 75% 22%, rgba(134, 161, 198, 0.10), transparent 58%),
+    #EEF3FB !important;
+  border-top: none !important;
+}
+
+/* Heading FAQ sobre fundo claro */
+.elementor-element-9482d17 .elementor-heading-title {
+  color: #0D1829 !important;
+  -webkit-text-fill-color: #0D1829 !important;
+  background: none !important;
+}
+
+/* Accordion fechado: branco com borda azul */
+.elementor-element-efa09d3 .e-n-accordion-item-title {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(200, 164, 106, 0.24) !important;
+  box-shadow: 0 2px 12px rgba(117, 140, 170, 0.08) !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item:not([open]) > .e-n-accordion-item-title:hover {
+  background: #F8FBFF !important;
+  border-color: rgba(200, 164, 106, 0.46) !important;
+  box-shadow: 0 4px 16px rgba(117, 140, 170, 0.12) !important;
+}
+
+/* Accordion aberto: azul médio preenchido */
+.elementor-element-efa09d3 .e-n-accordion-item[open] > .e-n-accordion-item-title {
+  background: linear-gradient(135deg, #1B2634 0%, #121B28 100%) !important;
+  border-color: #B9955F !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item[open] .e-n-accordion-item-title-header h3 {
+  color: #FFFFFF !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item[open] .e-n-accordion-item-title-icon i {
+  color: #E6C892 !important;
+  filter: none !important;
+}
+
+/* Texto fechado: escuro para leitura no fundo claro */
+.elementor-element-efa09d3 .e-n-accordion-item-title-header h3 {
+  color: #152035 !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item-title-icon i {
+  color: #8F6D3A !important;
+  filter: none !important;
+}
+
+/* Corpo accordion sobre fundo claro */
+.elementor-element-efa09d3 .e-n-accordion-item > .e-con {
+  background: #F7FBFF !important;
+  border: 1px solid rgba(157, 178, 212, 0.32) !important;
+  border-top: none !important;
+}
+.elementor-element-efa09d3 .e-n-accordion-item > .e-con p {
+  color: #344A67 !important;
+}
+
+/* =====================================================
+   FOOTER — azul muito escuro
+   ===================================================== */
+.elementor-element-6e1ddc6 {
+  background: #060C1A !important;
+  border-top: 1px solid rgba(200, 164, 106, 0.24) !important;
+}
+.elementor-element-6e1ddc6 > .e-con-inner {
+  align-items: center !important;
+}
+.elementor-element-762dde1 {
+  width: 100% !important;
+  max-width: min(900px, 100%) !important;
+  --container-widget-width: 100% !important;
+  --container-widget-flex-grow: 0 !important;
+  align-self: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.elementor-element-762dde1 > .elementor-widget-container {
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.elementor-element-762dde1 .elementor-heading-title,
+.elementor-element-762dde1 p {
+  color: rgba(191, 206, 228, 0.48) !important;
+  -webkit-text-fill-color: rgba(191, 206, 228, 0.48) !important;
+  text-align: center !important;
+}
+
+/* =====================================================
+   BOTÕES CTA — azul vivo com glow
+   ===================================================== */
+.elementor-button {
+  background: linear-gradient(135deg, #B88D53 0%, #D1AA70 55%, #F0D49F 100%) !important;
+  color: #21150B !important;
+  border: 1px solid rgba(255, 247, 229, 0.44) !important;
+  box-shadow:
+    0 0 0 3px rgba(200, 164, 106, 0.20),
+    0 12px 36px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.32) !important;
+}
+.elementor-button:hover,
+.elementor-button:focus {
+  background: linear-gradient(135deg, #C2975B 0%, #DDB57C 52%, #F6DEAF 100%) !important;
+  color: #1C1209 !important;
+  transform: translateY(-2px) !important;
+  filter: brightness(1.05) !important;
+  box-shadow:
+    0 0 0 4px rgba(200, 164, 106, 0.30),
+    0 16px 44px rgba(0, 0, 0, 0.46),
+    inset 0 1px 0 rgba(255, 255, 255, 0.30) !important;
+}
+
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
+@media (max-width: 767px) {
+  .lp-ideal-section > .e-con-inner {
+    padding-bottom: clamp(80px, 14vw, 110px) !important;
+    padding-block-end: clamp(80px, 14vw, 110px) !important;
+  }
+  #ideal .elementor-element-aa06c78,
+  #ideal .lp-ideal-grid {
+    margin-bottom: clamp(64px, 14vw, 96px) !important;
+  }
+  .lp-ideal-section {
+    --padding-bottom: clamp(80px, 14vw, 110px) !important;
+  }
+  .elementor-element-60f74e6::after { border-radius: 16px 16px 0 0; }
+  .lp-price-new .elementor-heading-title b { font-size: clamp(44px, 12vw, 60px) !important; }
+}
+</style>
+</head>
+<body class="wp-singular page-template page-template-elementor_canvas page page-id-10983 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-10983">
+	<!-- Google Tag Manager (noscript) -->
+<noscript></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<div data-elementor-type="wp-page" data-elementor-id="10983" class="elementor elementor-10983" data-elementor-post-type="page">
+
+				<!-- SECTION: HERO -->
+				<div id="hero" class="elementor-element elementor-element-fe4f460 e-flex e-con-boxed e-con e-parent" data-id="fe4f460" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-d0951f3 e-con-full e-flex e-con e-child" data-id="d0951f3" data-element_type="container" data-e-type="container">
+
+				<div class="elementor-element elementor-element-60649fd elementor-widget elementor-widget-heading" data-id="60649fd" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Descubra como montar equipes mais eficientes e evitar preju&#237;zos com contrata&#231;&#245;es equivocadas</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-e3aaebc elementor-widget elementor-widget-heading" data-id="e3aaebc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Assista ao v&#237;deo abaixo e transforme suas contrata&#231;&#245;es em decis&#245;es assertivas.</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-e36d219 e-con-full e-flex e-con e-child" data-id="e36d219" data-element_type="container" data-e-type="container" style="justify-content:center;">
+					<div class="perfmatters-lazy-youtube" data-src="https://www.youtube.com/embed/hL-vP3LF_mo" style="width:100%;max-width:720px;">
+						<img src="https://i.ytimg.com/vi/hL-vP3LF_mo/hqdefault.jpg" alt="V&#237;deo" title="Assista ao v&#237;deo">
+						<div class="play"></div>
+					</div>
+				</div>
+
+				<div class="elementor-element elementor-element-a4720b3 elementor-mobile-align-justify elementor-align-justify elementor-widget elementor-widget-button" data-id="a4720b3" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="#preco">
+						<span class="elementor-button-content-wrapper">
+							<span class="elementor-button-text">QUERO CONTRATAR COM ASSERTIVIDADE</span>
+						</span>
+					</a>
+					</div>
+				</div>
+				</div>
+
+		</div>
+					</div>
+				</div>
+
+				<!-- SECTION: PROBLEMA -->
+				<div class="elementor-element elementor-element-4811db9 e-flex e-con-boxed e-con e-parent" data-id="4811db9" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-60f74e6 e-con-full e-flex e-con e-child" data-id="60f74e6" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+
+				<div class="elementor-element elementor-element-6b5be77 elementor-widget elementor-widget-heading" data-id="6b5be77" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Voc&#234; j&#225; contratou algu&#233;m que parecia perfeito na entrevista&#8230; e em 3 meses j&#225; n&#227;o estava mais na empresa?</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-fab37ec elementor-widget elementor-widget-heading" data-id="fab37ec" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">A maioria dos l&#237;deres conduz entrevistas da mesma forma: confia no instinto, faz perguntas gen&#233;ricas e decide com base em feeling.<br><br>E o resultado?</h2>
+				</div>
+				</div>
+
+		<div class="elementor-element elementor-element-a5a8cd5 e-con-full e-flex e-con e-child" data-id="a5a8cd5" data-element_type="container" data-e-type="container">
+
+				<div class="elementor-element elementor-element-7297bf1 elementor-position-top elementor-widget elementor-widget-icon-box" data-id="7297bf1" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-coins"></i></span></div>
+						<div class="elementor-icon-box-content"><p class="elementor-icon-box-description">Contrata&#231;&#245;es que custam tempo, dinheiro e energia da equipe</p></div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-26d5a48 elementor-position-top elementor-widget elementor-widget-icon-box" data-id="26d5a48" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-user-minus"></i></span></div>
+						<div class="elementor-icon-box-content"><p class="elementor-icon-box-description">Turnover que desgasta o time e impacta o caixa da empresa</p></div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-acadf36 elementor-position-top elementor-widget elementor-widget-icon-box" data-id="acadf36" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-user-secret"></i></span></div>
+						<div class="elementor-icon-box-content"><p class="elementor-icon-box-description">Candidatos treinados para responder qualquer coisa &#8212; e voc&#234; sem saber separar o real do ensaiado</p></div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-309de81 elementor-position-top elementor-widget elementor-widget-icon-box" data-id="309de81" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-balance-scale"></i></span></div>
+						<div class="elementor-icon-box-content"><p class="elementor-icon-box-description">Decis&#245;es baseadas em &#8220;acho que vai dar certo&#8221; que voltam como problema</p></div>
+					</div>
+				</div>
+				</div>
+
+		</div>
+
+				<div class="elementor-element elementor-element-cf5cdf1 elementor-widget elementor-widget-heading" data-id="cf5cdf1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">O problema n&#227;o &#233; voc&#234;. &#201; que <b>ningu&#233;m te ensinou a entrevistar com estrutura.</b></h2>
+				</div>
+				</div>
+
+		</div>
+					</div>
+				</div>
+
+				<!-- SECTION: CONTEUDO -->
+				<div id="conteudo" class="elementor-element elementor-element-83fb64a e-flex e-con-boxed e-con e-parent" data-id="83fb64a" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+
+				<div class="elementor-element elementor-element-55d65c8 elementor-widget elementor-widget-heading" data-id="55d65c8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Dentro do <b>Forma&#231;&#227;o de Condutores de Entrevista</b>, voc&#234; ter&#225; em m&#227;os:</h2>
+				</div>
+				</div>
+
+		<div class="elementor-element elementor-element-6ffc2de e-con-full e-flex e-con e-child" data-id="6ffc2de" data-element_type="container" data-e-type="container">
+
+				<div class="elementor-element elementor-element-131ffb8 elementor-position-top elementor-widget elementor-widget-icon-box" data-id="131ffb8" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-question-circle"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Banco de +250 Perguntas Estrat&#233;gicas</h3>
+							<p class="elementor-icon-box-description">Chega de perguntas &#243;bvias. Tenha perguntas prontas para cada situa&#231;&#227;o, desenhadas para desarmar candidatos treinados e revelar a verdade.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-1766af9 elementor-position-top elementor-widget elementor-widget-icon-box" data-id="1766af9" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-book"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Dicion&#225;rio de 25 Compet&#234;ncias com Indicadores</h3>
+							<p class="elementor-icon-box-description">Aprenda a ler os sinais. Saiba exatamente o que observar na fala, no tom de voz e na postura do candidato.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-96cfd85 elementor-position-top elementor-widget elementor-widget-icon-box" data-id="96cfd85" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-chart-bar"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Planilha Pr&#225;tica de Ranqueamento</h3>
+							<p class="elementor-icon-box-description">Um sistema objetivo para classificar candidatos. Saia do &#8220;eu acho que ele &#233; bom&#8221; para o &#8220;ele &#233; o melhor para esta vaga baseado em dados&#8221;.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element lp-book-showcase elementor-widget elementor-widget-html" data-id="lpbook001" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<div class="lp-book-stage">
+						<div class="lp-book-3d" aria-hidden="true">
+							<figure class="lp-book-cover">
+								<img src="assets/images/capa.jpeg" alt="Capa da Formacao de Condutores de Entrevista" loading="lazy">
+							</figure>
+						</div>
+					</div>
+				</div>
+				</div>
+
+		</div>
+
+				<div class="elementor-element elementor-element-3da0ab8 elementor-widget elementor-widget-heading" data-id="3da0ab8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Ferramentas que voc&#234; pode aplicar imediatamente, mesmo que nunca tenha usado nenhum m&#233;todo estruturado antes.</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-c2c0493 elementor-mobile-align-justify elementor-align-justify elementor-widget elementor-widget-button" data-id="c2c0493" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="#preco">
+						<span class="elementor-button-content-wrapper">
+							<span class="elementor-button-text">QUERO ACESSAR A FORMA&#199;&#195;O AGORA</span>
+						</span>
+					</a>
+					</div>
+				</div>
+				</div>
+
+					</div>
+				</div>
+
+				<!-- SECTION: IDEAL PARA VOCE -->
+				<div id="ideal" class="elementor-element elementor-element-b9bbf70 e-flex e-con-boxed e-con e-parent lp-ideal-section" data-id="b9bbf70" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+
+				<div class="elementor-element elementor-element-ba3d7e1 elementor-widget elementor-widget-heading" data-id="ba3d7e1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Ideal para voc&#234; que:</h2>
+				</div>
+				</div>
+
+		<div class="elementor-element elementor-element-aa06c78 e-con-full e-flex e-con e-child lp-ideal-grid" data-id="aa06c78" data-element_type="container" data-e-type="container">
+
+				<div class="elementor-element elementor-element-0986cc3 elementor-position-top elementor-widget elementor-widget-icon-box lp-ideal-card" data-id="0986cc3" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-shield-alt"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Lidera e precisa contratar com seguran&#231;a</h3>
+							<p class="elementor-icon-box-description">Ganhe clareza de crit&#233;rios e elimine o &#8220;achismo&#8221; na decis&#227;o.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-0a1f050 elementor-position-top elementor-widget elementor-widget-icon-box lp-ideal-card" data-id="0a1f050" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-graduation-cap"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">J&#225; estudou R&amp;S, mas n&#227;o aplicou na pr&#225;tica</h3>
+							<p class="elementor-icon-box-description">Transforme teoria em roteiro pr&#225;tico e decis&#227;o compar&#225;vel.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-0cbf094 elementor-position-top elementor-widget elementor-widget-icon-box lp-ideal-card" data-id="0cbf094" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-star"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Quer diferenciar-se como l&#237;der assertivo</h3>
+							<p class="elementor-icon-box-description">Comunique profissionalismo ao candidato e credibilidade ao neg&#243;cio.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-119d40e elementor-position-top elementor-widget elementor-widget-icon-box lp-ideal-card" data-id="119d40e" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-compass"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Sente-se perdida(o) durante entrevistas</h3>
+							<p class="elementor-icon-box-description">Siga passo a passo e saiba o que perguntar e por qu&#234;.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-1a1c4ee elementor-position-top elementor-widget elementor-widget-icon-box lp-ideal-card" data-id="1a1c4ee" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-sync-alt"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Deseja reduzir turnover e custos ocultos</h3>
+							<p class="elementor-icon-box-description">Evite trocas prematuras com fit comportamental bem avaliado.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-1b86303 elementor-position-top elementor-widget elementor-widget-icon-box lp-ideal-card" data-id="1b86303" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-bolt"></i></span></div>
+						<div class="elementor-icon-box-content">
+							<h3 class="elementor-icon-box-title">Precisa contratar r&#225;pido, sem perder qualidade</h3>
+							<p class="elementor-icon-box-description">Acelere o processo com materiais prontos e planilha de decis&#227;o.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+
+		</div>
+					</div>
+				</div>
+
+				<!-- SECTION: SOBRE -->
+				<div class="elementor-element elementor-element-1da7956 e-flex e-con-boxed e-con e-parent" data-id="1da7956" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+
+				<div class="elementor-element elementor-element-e5c1f15 elementor-widget elementor-widget-heading" data-id="e5c1f15" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Muito prazer, eu sou a <b>Mariana Portes Gelais</b>.</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-8985fb5 elementor-widget elementor-widget-heading" data-id="8985fb5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Sou mineira, mas moro em Niter&#243;i h&#225; 20 anos. Minha jornada com o comportamento humano come&#231;ou cedo: sou formada em <b>Psicologia pela UFF</b>, p&#243;s-graduada em <b>Administra&#231;&#227;o de Empresas pela FGV</b> e certificada em <b>Coaching Integral Sist&#234;mico pela FEBRACIS</b>.<br><br>Estudo o universo do RH desde 2012 e atuo na &#225;rea desde 2014. Nesse tempo, acumulei experi&#234;ncia em recrutamento e sele&#231;&#227;o de todos os n&#237;veis, treinamento, consultoria interna de RH, indicadores, sistemas e inova&#231;&#227;o.<br><br>Tamb&#233;m sou <b>Analista de Perfil Comportamental</b>, especialista em alinhar candidatos &#224; cultura organizacional.</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element lp-mariana-photo elementor-widget elementor-widget-image" data-id="lpmariana01" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<img src="assets/images/foto%20mariana.png" alt="Foto de Mariana Portes Gelais" loading="lazy">
+				</div>
+				</div>
+
+					</div>
+				</div>
+
+				<!-- TRANSICAO: SOBRE -> OFERTA -->
+				<div class="elementor-element lp-transition-band e-flex e-con-boxed e-con e-parent" data-id="lptrans01" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+
+				<div class="elementor-element lp-transition-marquee elementor-widget elementor-widget-html" data-id="lptrans02" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<div class="lp-xband lp-xband-a" aria-hidden="true"><span class="lp-xband-text">FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675;</span></div>
+					<div class="lp-xband lp-xband-b" aria-hidden="true"><span class="lp-xband-text">FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675; FORMA&#199;&#195;O DE CONDUTORES DE ENTREVISTA &#9675;</span></div>
+				</div>
+				</div>
+
+					</div>
+				</div>
+
+				<!-- SECTION: PRECO -->
+				<div id="preco" class="elementor-element elementor-element-2d25ed4 e-flex e-con-boxed e-con e-parent" data-id="2d25ed4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+
+		<div class="elementor-element elementor-element-ea820d9 e-con-full e-flex e-con e-child lp-price-box" data-id="ea820d9" data-element_type="container" data-e-type="container">
+
+				<div class="elementor-element elementor-element-e03ccc6 elementor-widget elementor-widget-heading" data-id="e03ccc6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Adquira a <b>Forma&#231;&#227;o de Condutores de Entrevista</b> com uma oferta exclusiva:</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-2061afc elementor-widget elementor-widget-heading" data-id="2061afc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<ul class="lp-price-features" style="list-style:none;padding:0;margin:0;">
+						<li><span class="lp-topic-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span><span>Acesso completo a forma&#231;&#227;o</span></li>
+						<li><span class="lp-topic-icon" aria-hidden="true"><i class="fas fa-question-circle"></i></span><span>+250 perguntas estrat&#233;gicas para usar na entrevista (divididas por compet&#234;ncias)</span></li>
+						<li><span class="lp-topic-icon" aria-hidden="true"><i class="fas fa-search"></i></span><span>+25 indicadores de comportamentos</span></li>
+						<li><span class="lp-topic-icon" aria-hidden="true"><i class="fas fa-table"></i></span><span>Planilha pr&#225;tica para classificar e ranquear candidatos</span></li>
+						<li><span class="lp-topic-icon" aria-hidden="true"><i class="fas fa-toolbox"></i></span><span>Ferramentas pr&#225;ticas</span></li>
+						<li><span class="lp-topic-icon" aria-hidden="true"><i class="fas fa-infinity"></i></span><span>Acesso vital&#237;cio</span></li>
+						<li><span class="lp-topic-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></span><span>7 dias de garantia incondicional</span></li>
+					</ul>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-e34cd51 elementor-widget elementor-widget-heading lp-price-old" data-id="e34cd51" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">De R$297,00</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-9dd29bb elementor-widget elementor-widget-heading lp-price-new" data-id="9dd29bb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Por apenas <b>R$89,90</b></h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-cf5837f elementor-mobile-align-justify elementor-align-justify elementor-widget elementor-widget-button" data-id="cf5837f" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://pay.hotmart.com/" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+							<span class="elementor-button-text">QUERO APROVEITAR ESSA OFERTA</span>
+						</span>
+					</a>
+					</div>
+				</div>
+				</div>
+
+		</div>
+					</div>
+				</div>
+
+				<!-- SECTION: GARANTIA -->
+				<div id="garantia" class="elementor-element elementor-element-c5e2b3c e-flex e-con-boxed e-con e-parent lp-garantia-section" data-id="c5e2b3c" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+
+				<div class="elementor-element lp-garantia-3d elementor-widget elementor-widget-html" data-id="lpgarantia3d" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<div class="lp-garantia-seal" aria-hidden="true">
+						<div class="lp-garantia-seal-inner">
+							<span class="lp-garantia-seal-num">7</span>
+							<span class="lp-garantia-seal-label">DIAS</span>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-2356d04 elementor-widget elementor-widget-heading" data-id="2356d04" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">7 dias de garantia incondicional</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-246bf65 elementor-widget elementor-widget-heading" data-id="246bf65" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Baixe, use nas suas entrevistas e avalie. Se por algum motivo achar que n&#227;o &#233; pra voc&#234;, devolvemos 100% do seu investimento.</h2>
+				</div>
+				</div>
+
+					</div>
+				</div>
+
+				<!-- SECTION: FAQ -->
+				<div id="faq" class="elementor-element elementor-element-0e7673d e-flex e-con-boxed e-con e-parent" data-id="0e7673d" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+
+				<div class="elementor-element elementor-element-9482d17 elementor-widget elementor-widget-heading" data-id="9482d17" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Perguntas frequentes</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-efa09d3 elementor-widget elementor-widget-n-accordion" data-id="efa09d3" data-element_type="widget" data-widget_type="n-accordion.default">
+				<div class="elementor-widget-container">
+					<div class="e-n-accordion" aria-label="Accordion. Abra os itens com Enter ou com a tecla espa&#231;o. Feche-os com Escape.">
+
+						<details class="e-n-accordion-item">
+							<summary class="e-n-accordion-item-title">
+								<span class="e-n-accordion-item-title-header"><h3>Preciso ter experi&#234;ncia com R&amp;S?</h3></span>
+								<span class="e-n-accordion-item-title-icon">
+									<span class="e-closed"><i class="fas fa-plus"></i></span>
+									<span class="e-opened"><i class="fas fa-minus"></i></span>
+								</span>
+							</summary>
+							<div class="e-con e-con-full"><p>N&#227;o. A forma&#231;&#227;o foi criada para funcionar mesmo para quem nunca utilizou nenhum m&#233;todo estruturado. Tudo est&#225; explicado de forma pr&#225;tica e direta.</p></div>
+						</details>
+
+						<details class="e-n-accordion-item">
+							<summary class="e-n-accordion-item-title">
+								<span class="e-n-accordion-item-title-header"><h3>Esse material serve apenas para recrutadores?</h3></span>
+								<span class="e-n-accordion-item-title-icon">
+									<span class="e-closed"><i class="fas fa-plus"></i></span>
+									<span class="e-opened"><i class="fas fa-minus"></i></span>
+								</span>
+							</summary>
+							<div class="e-con e-con-full"><p>N&#227;o. Ele tamb&#233;m pode ajudar l&#237;deres, gestores e pessoas que participam de entrevistas e precisam decidir melhor.</p></div>
+						</details>
+
+						<details class="e-n-accordion-item">
+							<summary class="e-n-accordion-item-title">
+								<span class="e-n-accordion-item-title-header"><h3>Como vou receber o material?</h3></span>
+								<span class="e-n-accordion-item-title-icon">
+									<span class="e-closed"><i class="fas fa-plus"></i></span>
+									<span class="e-opened"><i class="fas fa-minus"></i></span>
+								</span>
+							</summary>
+							<div class="e-con e-con-full"><p>Ap&#243;s a confirma&#231;&#227;o do pagamento, voc&#234; recebe acesso imediato &#224; forma&#231;&#227;o completa &#8212; incluindo todos os materiais, planilhas e ferramentas.</p></div>
+						</details>
+
+						<details class="e-n-accordion-item">
+							<summary class="e-n-accordion-item-title">
+								<span class="e-n-accordion-item-title-header"><h3>O acesso &#233; vital&#237;cio?</h3></span>
+								<span class="e-n-accordion-item-title-icon">
+									<span class="e-closed"><i class="fas fa-plus"></i></span>
+									<span class="e-opened"><i class="fas fa-minus"></i></span>
+								</span>
+							</summary>
+							<div class="e-con e-con-full"><p>Sim. Comprando hoje, voc&#234; poder&#225; acessar o material sem prazo curto de expira&#231;&#227;o, conforme as condi&#231;&#245;es da plataforma.</p></div>
+						</details>
+
+					</div>
+				</div>
+				</div>
+
+					</div>
+				</div>
+
+				<!-- SECTION: FOOTER -->
+				<div class="elementor-element elementor-element-6e1ddc6 e-flex e-con-boxed e-con e-parent" data-id="6e1ddc6" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-762dde1 elementor-widget elementor-widget-heading" data-id="762dde1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">&#169; 2025 Mariana Portes Gelais. Todos os direitos reservados.</p>
+				</div>
+				</div>
+					</div>
+				</div>
+
+		</div>
+
+		
+			<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"./","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/5875445a5842ce40.js" id="hello-theme-frontend-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/7840919560ba7c46.js" id="elementor-webpack-runtime-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/516b554579414121.js" id="elementor-frontend-modules-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/a1bdb795c9a8ddca.js" id="jquery-ui-core-js"></script>
+<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar","a11yCarouselPrevSlideMessage":"Slide anterior","a11yCarouselNextSlideMessage":"Pr\u00f3ximo slide","a11yCarouselFirstSlideMessage":"Este \u00e9 o primeiro slide","a11yCarouselLastSlideMessage":"Este \u00e9 o \u00faltimo slide","a11yCarouselPaginationBulletMessage":"Ir para o slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Dispositivos m\u00f3veis no modo retrato","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Dispositivos m\u00f3veis no modo paisagem","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet no modo retrato","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet no modo paisagem","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"Tela ampla (widescreen)","value":2400,"default_value":2400,"direction":"min","is_enabled":true}},"hasCustomBreakpoints":true},"version":"3.35.7","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"e_components":true,"e_interactions":true,"e_editor_one":true,"import-export-customization":true,"e_pro_variables":true},"urls":{"assets":"assets/","ajaxurl":"","uploadUrl":"assets/"},"nonces":{"floatingButtonsClickTracking":"943280649b"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet","viewport_laptop","viewport_widescreen"],"body_background_background":"classic","global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"title","hello_header_menu_layout":"horizontal","hello_footer_logo_type":"logo"},"post":{"id":10983,"title":"Esteira%20de%20Conte%C3%BAdo%20%E2%80%93%20LPv2%20%E2%80%93%20Jennifer%20Setti","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/37dc96d020e0dd13.js" id="elementor-frontend-js"></script>
+<script id="perfmatters-lazy-load-js-before">
+window.lazyLoadOptions={elements_selector:"img[data-src],.perfmatters-lazy,.perfmatters-lazy-css-bg",thresholds:"0px 0px",class_loading:"pmloading",class_loaded:"pmloaded",callback_loaded:function(element){if(element.tagName==="IFRAME"){if(element.classList.contains("pmloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener("LazyLoad::Initialized",function(e){var lazyLoadInstance=e.detail.instance;});function perfmattersLazyLoadYouTube(e){var t=document.createElement("iframe"),r="ID?";r+=0===e.dataset.query.length?"":e.dataset.query+"&",r+="autoplay=1",t.setAttribute("src",r.replace("ID",e.dataset.src)),t.setAttribute("frameborder","0"),t.setAttribute("allowfullscreen","1"),t.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),e.replaceChild(t,e.firstChild)}
+//# sourceURL=perfmatters-lazy-load-js-before
+</script>
+<script async src="assets/js/23e3564a5b92d8f0.js" id="perfmatters-lazy-load-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/e7fd42cae3c5250a.js" id="elementor-pro-webpack-runtime-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/e9e8a799d4a96e24.js" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/655cfb73976b8609.js" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"","nonce":"7e0ba08723","urls":{"assets":"assets/","rest":""},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":true},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"pt_BR","app_id":""},"lottie":{"defaultAnimationUrl":""}};
+//# sourceURL=elementor-pro-frontend-js-before
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/618875dfcc5842a2.js" id="elementor-pro-frontend-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="assets/js/82634d67135c1fa7.js" id="pro-elements-handlers-js"></script>
+
+<script type="rocketlazyloadscript"
+  data-rocket-src="assets/js/41b05212d12395c0.js"
+  data-utmify-prevent-subids
+  async
+  defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script type="rocketlazyloadscript" data-no-minify="1" async data-rocket-src="assets/js/e7910dd9451fb6a2.js"></script><script>function lazyLoadThumb(e){var t='<img loading="lazy" data-edit="IMG_047" alt="" width="480" height="360">',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>	<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script><script type="text/javascript" id="perfmatters-delayed-styles-js">!function(){const e=["keydown","mousemove","wheel","touchmove","touchstart","touchend"];function t(){document.querySelectorAll("link[data-pmdelayedstyle]").forEach(function(e){e.setAttribute("href",e.getAttribute("data-pmdelayedstyle"))}),e.forEach(function(e){window.removeEventListener(e,t,{passive:!0})})}e.forEach(function(e){window.addEventListener(e,t,{passive:!0})})}();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  // Aguarda GSAP estar disponível
+  function initGSAP() {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ---- HERO: animação imediata no load ---- */
+    var heroTL = gsap.timeline({ defaults: { ease: "power3.out" } });
+    heroTL
+      .from(".elementor-element-60649fd", { opacity: 0, y: 55, duration: 1.0 })
+      .from(".elementor-element-e3aaebc", { opacity: 0, y: 30, duration: 0.75 }, "-=0.55")
+      .from(".elementor-element-e36d219", { opacity: 0, scale: 0.93, duration: 0.9 }, "-=0.4")
+      .from(".elementor-element-a4720b3", { opacity: 0, y: 22, duration: 0.6 }, "-=0.35");
+
+    /* ---- CTA breathing suave ---- */
+    gsap.to(".elementor-button", {
+      y: -1.5,
+      duration: 2.8,
+      yoyo: true,
+      repeat: -1,
+      ease: "sine.inOut",
+      stagger: 0.08,
+      delay: 2.2
+    });
+
+    /* ---- Helper: cria ScrollTrigger de enter ---- */
+    function onEnter(targets, vars) {
+      if (!document.querySelector(targets)) return;
+      gsap.from(targets, Object.assign({ scrollTrigger: {
+        trigger: targets, start: "top 85%", once: true
+      }}, vars));
+    }
+    function onEnterEl(el, vars) {
+      if (!el) return;
+      gsap.from(el, Object.assign({ scrollTrigger: {
+        trigger: el, start: "top 85%", once: true
+      }}, vars));
+    }
+    function stagger(targets, parent, vars) {
+      var els = document.querySelectorAll(targets);
+      if (!els.length) return;
+      var triggerEl = parent ? document.querySelector(parent) : els[0].parentElement;
+      gsap.from(els, Object.assign({ scrollTrigger: {
+        trigger: triggerEl || els[0], start: "top 82%", once: true
+      }}, vars));
+    }
+
+    /* ---- PROBLEMA ---- */
+    onEnter(".elementor-element-6b5be77 .elementor-heading-title",
+      { opacity: 0, y: 40, duration: 0.8 });
+    onEnter(".elementor-element-fab37ec .elementor-heading-title",
+      { opacity: 0, y: 30, duration: 0.7, delay: 0.1 });
+    stagger(".elementor-element-a5a8cd5 > .elementor-widget",
+      ".elementor-element-a5a8cd5",
+      { opacity: 0, x: -24, stagger: 0.12, duration: 0.6 });
+    onEnter(".elementor-element-cf5cdf1 .elementor-heading-title",
+      { opacity: 0, y: 25, duration: 0.7, delay: 0.2 });
+
+    /* ---- CONTEÚDO ---- */
+    onEnter(".elementor-element-55d65c8 .elementor-heading-title",
+      { opacity: 0, y: 40, duration: 0.85 });
+    stagger(".elementor-element-6ffc2de > .elementor-widget",
+      ".elementor-element-6ffc2de",
+      { opacity: 0, y: 48, scale: 0.95, stagger: 0.14, duration: 0.8, ease: "power3.out" });
+    onEnter(".elementor-element-3da0ab8 .elementor-heading-title",
+      { opacity: 0, y: 20, duration: 0.6, delay: 0.15 });
+
+    /* ---- IDEAL ---- */
+    onEnter(".elementor-element-ba3d7e1 .elementor-heading-title",
+      { opacity: 0, y: 35, duration: 0.8 });
+    stagger(".lp-ideal-card",
+      ".lp-ideal-grid",
+      { opacity: 0, y: 36, scale: 0.96, stagger: 0.1, duration: 0.65, ease: "power2.out" });
+
+    /* ---- SOBRE ---- */
+    onEnter(".elementor-element-e5c1f15 .elementor-heading-title",
+      { opacity: 0, y: 35, duration: 0.8 });
+    onEnter(".elementor-element-8985fb5 .elementor-heading-title",
+      { opacity: 0, y: 20, duration: 0.8, delay: 0.15 });
+
+    /* ---- PREÇO ---- */
+    onEnterEl(document.querySelector(".lp-price-box, .elementor-element-ea820d9"),
+      { opacity: 0, scale: 0.92, y: 50, duration: 1.0, ease: "power3.out" });
+
+    /* ---- GARANTIA ---- */
+    onEnter(".elementor-element-2356d04 .elementor-heading-title",
+      { opacity: 0, y: 30, duration: 0.75 });
+    onEnter(".elementor-element-246bf65 .elementor-heading-title",
+      { opacity: 0, y: 20, duration: 0.7, delay: 0.12 });
+
+    /* ---- FAQ ---- */
+    onEnter(".elementor-element-9482d17 .elementor-heading-title",
+      { opacity: 0, y: 35, duration: 0.8 });
+    stagger(".e-n-accordion-item",
+      ".elementor-element-efa09d3",
+      { opacity: 0, x: -28, stagger: 0.1, duration: 0.55, ease: "power2.out" });
+
+    /* ---- Parallax sutil no hero ---- */
+    if (window.innerWidth > 767) {
+      ScrollTrigger.create({
+        trigger: ".elementor-element-fe4f460",
+        start: "top top",
+        end: "bottom top",
+        onUpdate: function(self) {
+          var el = document.querySelector(".elementor-element-d0951f3");
+          if (el) gsap.set(el, { y: self.progress * 40 });
+        }
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initGSAP);
+  } else {
+    initGSAP();
+  }
+})();
+</script>
+<script>
+(function(){
+  function initBook3D() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var stage = document.querySelector(".lp-book-stage");
+    var book = stage && stage.querySelector(".lp-book-3d");
+    if (!stage || !book) return;
+
+    var state = {
+      rx: 4.5, ry: -14, tx: 0, ty: 0,
+      trx: 4.5, try: -14, ttx: 0, tty: 0,
+      hover: false
+    };
+
+    function setTargetsFromPointer(e) {
+      var rect = stage.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width;
+      var py = (e.clientY - rect.top) / rect.height;
+      var nx = Math.max(-1, Math.min(1, (px - 0.5) * 2));
+      var ny = Math.max(-1, Math.min(1, (py - 0.5) * 2));
+
+      state.try = -14 + nx * 7;
+      state.trx = 4.5 - ny * 5;
+      state.ttx = nx * 6;
+      state.tty = ny * 4 - 2;
+    }
+
+    stage.addEventListener("pointerenter", function() { state.hover = true; });
+    stage.addEventListener("pointermove", setTargetsFromPointer);
+    stage.addEventListener("pointerleave", function() { state.hover = false; });
+
+    function tick(now) {
+      if (!state.hover) {
+        var t = now * 0.001;
+        state.try = -14 + Math.sin(t * 0.85) * 3.2;
+        state.trx = 4.5 + Math.cos(t * 1.15) * 1.8;
+        state.ttx = Math.sin(t * 0.8) * 2.4;
+        state.tty = -2 + Math.cos(t * 1.1) * 2.2;
+      }
+
+      state.ry += (state.try - state.ry) * 0.085;
+      state.rx += (state.trx - state.rx) * 0.085;
+      state.tx += (state.ttx - state.tx) * 0.08;
+      state.ty += (state.tty - state.ty) * 0.08;
+
+      var transformValue =
+        "translate3d(" + state.tx.toFixed(2) + "px," + state.ty.toFixed(2) + "px,0)" +
+        " rotateX(" + state.rx.toFixed(2) + "deg)" +
+        " rotateY(" + state.ry.toFixed(2) + "deg)";
+      book.style.setProperty("transform", transformValue, "important");
+
+      requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBook3D);
+  } else {
+    initBook3D();
+  }
+})();
+</script>
+<script>
+(function() {
+  if (!window.location.hash) return;
+  window.addEventListener('load', function() {
+    var target = document.querySelector(window.location.hash);
+    if (target) {
+      setTimeout(function() {
+        target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }, 60);
+    }
+  });
+})();
+</script>
+</body>
+</html>
+
+<!-- Performance optimized by AccelerateWP. - Debug: cached@1773400118 -->
