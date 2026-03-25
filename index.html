@@ -183,12 +183,18 @@ body { background: #060D1A !important; }
   gap: 24px !important;
 }
 @media (max-width: 767px) {
+  /* Hero preenche toda a viewport no mobile */
+  .elementor-element-fe4f460 {
+    min-height: 100svh !important;
+    --min-height: 100svh !important;
+  }
   .elementor-element-fe4f460 > .e-con-inner {
-    padding-top: 56px !important;
-    padding-bottom: 52px !important;
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
-    gap: 22px !important;
+    gap: 24px !important;
+    justify-content: center !important;
   }
   .elementor-element-60649fd .elementor-heading-title {
     font-size: clamp(28px, 8.5vw, 38px) !important;
@@ -1447,6 +1453,14 @@ body,
   height: 100% !important;
   transform: none !important;
   border-radius: 10px !important;
+}
+/* Desktop: usa aspect-ratio para proporcionar 16:9 corretamente com max-width:720px */
+@media (min-width: 768px) {
+  .elementor-element-e36d219 .perfmatters-lazy-youtube {
+    height: auto !important;
+    padding-bottom: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
 }
 
 /* =====================================================
