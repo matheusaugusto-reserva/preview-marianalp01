@@ -182,12 +182,30 @@ body { background: #060D1A !important; }
   padding-bottom: 80px !important;
   gap: 24px !important;
 }
+@media (max-width: 767px) {
+  .elementor-element-fe4f460 > .e-con-inner {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    gap: 18px !important;
+  }
+  .elementor-element-60649fd .elementor-heading-title {
+    font-size: clamp(24px, 7.5vw, 34px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+  }
+  .elementor-element-e3aaebc .elementor-heading-title {
+    font-size: clamp(14px, 4vw, 17px) !important;
+    max-width: 100% !important;
+  }
+}
 /* Hero heading principal */
 .elementor-element-60649fd .elementor-heading-title {
   font-family: "Perfectly Nineties", Sans-serif !important;
-  font-size: clamp(30px, 4vw, 50px) !important;
+  font-size: clamp(26px, 4vw, 50px) !important;
   font-weight: 400 !important;
-  line-height: 1.15 !important;
+  line-height: 1.2 !important;
   background: linear-gradient(135deg, #E0EDFF 0%, #93C5FD 50%, #60A5FA 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -1402,9 +1420,9 @@ body,
 .elementor-element-e36d219 .perfmatters-lazy-youtube {
   position: relative !important;
   width: min(100%, 720px) !important;
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;
-  padding-bottom: 0 !important;
+  /* padding-bottom mantém a altura mesmo quando o iframe substitui a imagem */
+  height: 0 !important;
+  padding-bottom: 56.25% !important;
   border-radius: 10px !important;
   overflow: hidden !important;
 }
@@ -1423,6 +1441,7 @@ body,
   width: 100% !important;
   height: 100% !important;
   transform: none !important;
+  border-radius: 10px !important;
 }
 
 /* =====================================================
@@ -2426,11 +2445,21 @@ body *::-webkit-scrollbar {
 </style>
 <style id="lp-mobile-video-size-fix">
 @media (max-width: 767px) {
+  #hero .elementor-element-e36d219 {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
   #hero .elementor-element-e36d219 .perfmatters-lazy-youtube {
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
-    margin-left: 50% !important;
-    transform: translateX(-50%) !important;
+    /* 100% do container pai, que já controla as margens laterais da página */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transform: none !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
   }
 
   #hero .elementor-element-e36d219 .perfmatters-lazy-youtube iframe {
