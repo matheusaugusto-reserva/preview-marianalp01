@@ -182,7 +182,7 @@ body { background: #060D1A !important; }
 /* Hero heading principal */
 .elementor-element-60649fd .elementor-heading-title {
   font-family: "Perfectly Nineties", Sans-serif !important;
-  font-size: clamp(30px, 4.5vw, 58px) !important;
+  font-size: clamp(30px, 4vw, 50px) !important;
   font-weight: 400 !important;
   line-height: 1.15 !important;
   background: linear-gradient(135deg, #E0EDFF 0%, #93C5FD 50%, #60A5FA 100%) !important;
@@ -977,7 +977,7 @@ body,
 .elementor-element-d0951f3 {
   --width: 100% !important;
   width: 100% !important;
-  max-width: min(900px, 92vw) !important;
+  max-width: min(1000px, 92vw) !important;
   margin: 0 auto !important;
   --align-items: center !important;
   align-items: center !important;
@@ -1329,13 +1329,53 @@ body,
 }
 
 /* =====================================================
-   HERO — azul profundo + glow azul no topo (ESCURO)
+   HERO — Dark space bg + warm amber glow + dot field
+   (referência: fundo escuro quase-preto, pontos/partículas
+    espalhados, glow âmbar/laranja atrás do vídeo)
    ===================================================== */
 .elementor-element-fe4f460 {
   background:
-    radial-gradient(880px 540px at 52% -14%, rgba(200, 164, 106, 0.24), transparent 60%),
-    radial-gradient(720px 460px at 10% 12%, rgba(155, 184, 220, 0.12), transparent 66%),
-    linear-gradient(170deg, #101723 0%, #090F16 100%) !important;
+    /* Glow quente âmbar — centralizado atrás do player */
+    radial-gradient(ellipse 660px 380px at 50% 75%, rgba(220, 140, 24, 0.44) 0%, rgba(190, 104, 12, 0.24) 40%, transparent 66%),
+    /* Corona ampla — suaviza a transição do glow */
+    radial-gradient(ellipse 1120px 560px at 50% 70%, rgba(158, 86, 8, 0.18) 0%, transparent 55%),
+    /* Leve profundidade fria no topo */
+    radial-gradient(ellipse 680px 300px at 50% 0%, rgba(45, 62, 115, 0.10) 0%, transparent 52%),
+    /* Base: preto profundo levemente azulado */
+    #08090F !important;
+}
+
+/* Dot grid sutil e elegante */
+.elementor-element-fe4f460::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  top: 0 !important; left: 0 !important;
+  width: 100% !important; height: 100% !important;
+  transform: none !important;
+  /* Malha de pontinhos sutil, como a referência */
+  background-image: radial-gradient(circle 0.8px at 12px 12px, rgba(255, 255, 255, 0.03) 100%, transparent 0) !important;
+  background-size: 24px 24px !important;
+  /* Máscara: limpa no centro para não brigar com texto/vídeo, forte nas bordas */
+  mask-image: radial-gradient(ellipse 1000px 700px at 50% 50%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,1) 85%) !important;
+  -webkit-mask-image: radial-gradient(ellipse 1000px 700px at 50% 50%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,1) 85%) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Traços contínuos de "circuito" conectando ao vídeo */
+.elementor-element-fe4f460::after {
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important; height: 100% !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='1000' fill='none'%3E%3Cpath d='M -100 280 L 120 280 A 24 24 0 0 1 144 304 L 144 576 A 24 24 0 0 0 168 600 L 340 600' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/%3E%3Ccircle cx='340' cy='600' r='3.5' fill='rgba(255,255,255,0.20)'/%3E%3Cpath d='M 1500 280 L 1280 280 A 24 24 0 0 0 1256 304 L 1256 576 A 24 24 0 0 1 1232 600 L 1060 600' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/%3E%3Ccircle cx='1060' cy='600' r='3.5' fill='rgba(255,255,255,0.20)'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-size: 1400px 1000px !important;
+  background-position: center top !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
 }
 
 /* Título hero: branco puro brilhante */
@@ -1884,9 +1924,11 @@ body *::-webkit-scrollbar {
 }
 .lp-mariana-photo img {
   width: 100% !important;
+  aspect-ratio: 4 / 5 !important;
   height: auto !important;
   display: block !important;
   object-fit: cover !important;
+  object-position: center 22% !important;
   border-radius: 18px !important;
   border: 1px solid rgba(214, 178, 124, 0.42) !important;
   box-shadow:
@@ -1909,11 +1951,26 @@ body *::-webkit-scrollbar {
   color: #EFF6FF !important;
   -webkit-text-fill-color: #EFF6FF !important;
   background: none !important;
+  font-size: clamp(26px, 2.05vw, 36px) !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.01em !important;
 }
 .elementor-element-e5c1f15 .elementor-heading-title b {
   color: #D6B27C !important;
   -webkit-text-fill-color: #D6B27C !important;
   background: none !important;
+}
+@media (min-width: 1025px) {
+  .elementor-element-e5c1f15 .elementor-heading-title {
+    white-space: nowrap !important;
+  }
+}
+@media (max-width: 1024px) {
+  .elementor-element-e5c1f15 .elementor-heading-title {
+    white-space: normal !important;
+    font-size: clamp(24px, 5.4vw, 34px) !important;
+    line-height: 1.2 !important;
+  }
 }
 .elementor-element-8985fb5 .elementor-heading-title {
   border-left: 3px solid rgba(214, 178, 124, 0.72) !important;
@@ -2586,7 +2643,7 @@ body::-webkit-scrollbar-track {
 				<div class="elementor-widget-container">
 					<div class="elementor-icon-box-wrapper">
 						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-user-secret"></i></span></div>
-						<div class="elementor-icon-box-content"><p class="elementor-icon-box-description">Candidatos treinados para responder qualquer coisa &#8212; e voc&#234; sem saber separar o real do ensaiado</p></div>
+						<div class="elementor-icon-box-content"><p class="elementor-icon-box-description">Candidatos treinados para responder qualquer coisa, e voc&#234; sem saber separar o real do ensaiado</p></div>
 					</div>
 				</div>
 				</div>
@@ -2801,7 +2858,7 @@ body::-webkit-scrollbar-track {
 
 				<div class="elementor-element lp-mariana-photo elementor-widget elementor-widget-image" data-id="lpmariana01" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-					<img src="assets/images/foto-mariana.webp" width="768" height="1344" alt="Foto de Mariana Portes Gelais" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/foto%20mariana.png';">
+						<img src="assets/images/img%20mariana.png" width="768" height="1344" alt="Foto de Mariana Portes Gelais" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/foto%20mariana.png';">
 				</div>
 				</div>
 
@@ -3315,6 +3372,77 @@ if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_c
     document.addEventListener('DOMContentLoaded', activateLazyYoutube);
   } else {
     activateLazyYoutube();
+  }
+})();
+</script>
+
+<!-- Animação de scroll: cards "Ideal para você que:" surgem das laterais no mobile -->
+<style>
+@media (max-width: 767px) {
+  @keyframes lp-slide-in-left {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes lp-slide-in-right {
+    from { opacity: 0; transform: translateX(60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .lp-ideal-card.lp-card-hidden {
+    opacity: 0;
+  }
+  .lp-ideal-card.lp-card-hidden.lp-from-left {
+    transform: translateX(-60px);
+  }
+  .lp-ideal-card.lp-card-hidden.lp-from-right {
+    transform: translateX(60px);
+  }
+
+  .lp-ideal-card.lp-card-visible.lp-from-left {
+    animation: lp-slide-in-left 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+  .lp-ideal-card.lp-card-visible.lp-from-right {
+    animation: lp-slide-in-right 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+}
+</style>
+<script>
+(function () {
+  function isMobile() {
+    return window.innerWidth <= 767;
+  }
+
+  function initIdealCardsAnimation() {
+    if (!isMobile()) return;
+
+    var cards = document.querySelectorAll('.lp-ideal-card');
+    if (!cards.length) return;
+
+    cards.forEach(function (card, index) {
+      card.classList.add('lp-card-hidden');
+      card.classList.add(index % 2 === 0 ? 'lp-from-left' : 'lp-from-right');
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var card = entry.target;
+          card.classList.remove('lp-card-hidden');
+          card.classList.add('lp-card-visible');
+          observer.unobserve(card);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    cards.forEach(function (card) {
+      observer.observe(card);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIdealCardsAnimation);
+  } else {
+    initIdealCardsAnimation();
   }
 })();
 </script>
