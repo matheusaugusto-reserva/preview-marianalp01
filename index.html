@@ -463,7 +463,6 @@ body { background: #060D1A !important; }
    ============================================================ */
 .lp-ideal-section {
   background: #07101F !important;
-  border-top: 1px solid rgba(255,255,255,.04) !important;
 }
 .lp-ideal-section > .e-con-inner {
   max-width: 1100px !important;
@@ -1053,7 +1052,6 @@ body,
 
 .elementor-element-4811db9,
 .elementor-element-83fb64a,
-.lp-ideal-section,
 .elementor-element-1da7956,
 .elementor-element-2d25ed4,
 .lp-garantia-section,
@@ -1900,19 +1898,21 @@ body *::-webkit-scrollbar {
 .elementor-10983 *::-webkit-scrollbar-corner {
   background: transparent !important;
 }
-.lp-ideal-section,
-.lp-ideal-section > .e-con-inner,
-.lp-ideal-grid {
-  overflow-x: clip !important;
+/* Overflow da seção ideal: hidden na seção para cortar qualquer
+   conteúdo que vaze (clip causa artefatos nos cantos em alguns browsers);
+   os children do grid ficam visíveis via e-con-inner. */
+.lp-ideal-section {
+  overflow: hidden !important;
+  --overflow: hidden !important;
 }
-.elementor-element-b9bbf70,
+.lp-ideal-section > .e-con-inner {
+  overflow: visible !important;
+}
 .elementor-element-aa06c78,
 .lp-ideal-grid {
-  --overflow: visible !important;
   overflow: visible !important;
   scrollbar-width: none !important;
 }
-.elementor-element-b9bbf70::-webkit-scrollbar,
 .elementor-element-aa06c78::-webkit-scrollbar,
 .lp-ideal-grid::-webkit-scrollbar {
   width: 0 !important;
@@ -2568,26 +2568,12 @@ body *::-webkit-scrollbar {
 </style>
 <style id="lp-show-scrollbar">
 html,
-body,
-body *,
-.elementor-10983 .e-con,
-.elementor-10983 .e-con-inner,
-.lp-ideal-section,
-.lp-ideal-section > .e-con-inner,
-.lp-ideal-grid,
-.elementor-element-b9bbf70,
-.elementor-element-aa06c78 {
+body {
   scrollbar-width: auto !important;
 }
 
 html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-body *::-webkit-scrollbar,
-.elementor-10983 .e-con::-webkit-scrollbar,
-.elementor-10983 .e-con-inner::-webkit-scrollbar,
-.elementor-element-b9bbf70::-webkit-scrollbar,
-.elementor-element-aa06c78::-webkit-scrollbar,
-.lp-ideal-grid::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 12px !important;
   height: 12px !important;
   display: block !important;
@@ -2602,6 +2588,53 @@ body::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.08) !important;
+}
+</style>
+<style id="lp-bg-sync">
+/* Sincroniza fundos do Hero e Ideal com a seção de Conteúdo */
+.elementor-element-fe4f460 {
+  background:
+    /* Glow quente âmbar (mantido) */
+    radial-gradient(ellipse 660px 380px at 50% 75%, rgba(220, 140, 24, 0.44) 0%, rgba(190, 104, 12, 0.24) 40%, transparent 66%),
+    /* Corona ampla (mantida) */
+    radial-gradient(ellipse 1120px 560px at 50% 70%, rgba(158, 86, 8, 0.18) 0%, transparent 55%),
+    /* Profundidade fria no topo (mantida) */
+    radial-gradient(ellipse 680px 300px at 50% 0%, rgba(45, 62, 115, 0.10) 0%, transparent 52%),
+    /* Azul ajustado */
+    linear-gradient(160deg, #131C2A 0%, #0B1118 100%) !important;
+}
+
+/* Fundo uniforme na seção ideal — elimina artefatos de canto */
+.lp-ideal-section,
+#ideal.elementor-element-b9bbf70 {
+  background: #0B1118 !important;
+  background-clip: border-box !important;
+  background-origin: border-box !important;
+  border: none !important;
+  border-top: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --background-overlay: none !important;
+  --border-top-width: 0px !important;
+  --border-bottom-width: 0px !important;
+  --border-left-width: 0px !important;
+  --border-right-width: 0px !important;
+  --border-style: none !important;
+  --border-radius: 0 !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+}
+
+/* Impede que o ::before / ::after do Elementor framework renderize
+   qualquer overlay sobre a seção */
+#ideal.elementor-element-b9bbf70::before,
+#ideal.elementor-element-b9bbf70::after,
+.lp-ideal-section::before,
+.lp-ideal-section::after {
+  content: none !important;
+  display: none !important;
 }
 </style>
 </head>
