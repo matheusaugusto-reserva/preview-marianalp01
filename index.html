@@ -1238,15 +1238,15 @@ body,
   padding-inline-start: clamp(18px, 2.5vw, 30px) !important;
   padding-inline-end: clamp(18px, 2.5vw, 30px) !important;
   padding-top: clamp(64px, 8vw, 104px) !important;
-  padding-bottom: clamp(96px, 12vw, 160px) !important;
+  padding-bottom: 0 !important;
   padding-block-start: clamp(64px, 8vw, 104px) !important;
-  padding-block-end: clamp(96px, 12vw, 160px) !important;
+  padding-block-end: 0 !important;
 }
 
 /* Força respiro real abaixo do grid "Ideal para voce que" */
 #ideal .elementor-element-aa06c78,
 #ideal .lp-ideal-grid {
-  margin: 0 auto clamp(96px, 12vw, 170px) !important;
+  margin: 0 auto clamp(48px, 6vw, 80px) !important;
 }
 
 .elementor-element-ea820d9,
@@ -1529,8 +1529,8 @@ body,
   margin-right: auto !important;
 }
 .elementor-element-cf5cdf1 .elementor-heading-title b {
-  color: #B9955F !important;
-  -webkit-text-fill-color: #B9955F !important;
+  color: #0D1829 !important;
+  -webkit-text-fill-color: #0D1829 !important;
   background: none !important;
 }
 
@@ -2429,15 +2429,15 @@ body *::-webkit-scrollbar {
    ===================================================== */
 @media (max-width: 767px) {
   .lp-ideal-section > .e-con-inner {
-    padding-bottom: clamp(80px, 14vw, 110px) !important;
-    padding-block-end: clamp(80px, 14vw, 110px) !important;
+    padding-bottom: 0 !important;
+    padding-block-end: 0 !important;
   }
   #ideal .elementor-element-aa06c78,
   #ideal .lp-ideal-grid {
-    margin-bottom: clamp(64px, 14vw, 96px) !important;
+    margin-bottom: clamp(36px, 10vw, 56px) !important;
   }
   .lp-ideal-section {
-    --padding-bottom: clamp(80px, 14vw, 110px) !important;
+    --padding-bottom: 0px !important;
   }
   .elementor-element-60f74e6::after { border-radius: 16px 16px 0 0; }
   .lp-price-new .elementor-heading-title b { font-size: clamp(44px, 12vw, 60px) !important; }
@@ -2455,6 +2455,21 @@ body *::-webkit-scrollbar {
 </style>
 <style id="lp-hero-gold-highlight">
 #hero .elementor-element-60649fd .lp-hero-gold {
+  color: #C8A46A !important;
+  -webkit-text-fill-color: #C8A46A !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+.elementor-element-cf5cdf1 .lp-quote-line {
+  display: block !important;
+  color: #0D1829 !important;
+  -webkit-text-fill-color: #0D1829 !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+.elementor-element-8985fb5 .lp-bio-gold {
   color: #C8A46A !important;
   -webkit-text-fill-color: #C8A46A !important;
   background: none !important;
@@ -2636,6 +2651,217 @@ body::-webkit-scrollbar-track {
   content: none !important;
   display: none !important;
 }
+.lp-cost-section {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(180deg, #0B1118 0%, #101824 100%) !important;
+  --padding-top: clamp(72px, 8vw, 112px) !important;
+  --padding-bottom: clamp(72px, 8vw, 112px) !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  z-index: 2 !important;
+}
+.lp-cost-section > .e-con-inner {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  max-width: min(1100px, 92vw) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-inline-start: clamp(20px, 3vw, 36px) !important;
+  padding-inline-end: clamp(20px, 3vw, 36px) !important;
+}
+.lp-cost-section::before {
+  content: none !important;
+  display: none !important;
+}
+.lp-cost-section::after {
+  content: none !important;
+  display: none !important;
+}
+.lp-cost-shell {
+  position: relative !important;
+  width: min(100%, 1060px) !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: clamp(48px, 6vw, 80px) !important;
+  display: grid !important;
+  grid-template-columns: minmax(250px, 340px) minmax(0, 1fr) !important;
+  column-gap: clamp(28px, 4vw, 56px) !important;
+  row-gap: 24px !important;
+  align-items: start !important;
+  background: linear-gradient(160deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.025) 100%) !important;
+  border: 1px solid rgba(200, 164, 106, 0.26) !important;
+  border-radius: 28px !important;
+  padding: clamp(28px, 4vw, 52px) !important;
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255,255,255,0.04) !important;
+  overflow: hidden !important;
+}
+.lp-cost-shell::before {
+  content: none !important;
+  display: none !important;
+}
+.lp-cost-title,
+.lp-cost-copy {
+  position: relative !important;
+  z-index: 1 !important;
+}
+.lp-cost-title .elementor-heading-title {
+  font-family: "Perfectly Nineties", Sans-serif !important;
+  font-size: 46px !important;
+  line-height: 1.08 !important;
+  color: #F7FAFF !important;
+  -webkit-text-fill-color: #F7FAFF !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+.lp-type-char {
+  display: inline-block !important;
+  will-change: opacity, transform, filter !important;
+}
+.lp-type-word {
+  display: inline-block !important;
+  white-space: nowrap !important;
+}
+.lp-cost-title::after {
+  content: "" !important;
+  display: block !important;
+  width: 72px !important;
+  height: 2px !important;
+  margin-top: 18px !important;
+  background: linear-gradient(90deg, #E7C892 0%, rgba(231, 200, 146, 0.2) 100%) !important;
+}
+.lp-cost-copy {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+.lp-cost-text > .elementor-widget-container {
+  height: 100% !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+}
+.lp-cost-text .elementor-heading-title {
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  font-weight: 600 !important;
+  color: rgba(226, 235, 248, 0.86) !important;
+  -webkit-text-fill-color: rgba(226, 235, 248, 0.86) !important;
+  max-width: none !important;
+  margin: 0 !important;
+  overflow-wrap: anywhere !important;
+}
+.lp-cost-text {
+  padding: 20px 22px !important;
+  border-radius: 18px !important;
+  background: rgba(8, 15, 24, 0.52) !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+.lp-cost-number {
+  flex: 0 0 42px !important;
+  width: 42px !important;
+  height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  background: #050A10 !important;
+  border: 1px solid rgba(200, 164, 106, 0.30) !important;
+  color: #E7C892 !important;
+  -webkit-text-fill-color: #E7C892 !important;
+  font-family: "Neue Haas Grotesk", Sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+.lp-cost-number i {
+  color: #E7C892 !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+.lp-cost-text strong {
+  color: #E7C892 !important;
+  -webkit-text-fill-color: #E7C892 !important;
+  font-weight: 800 !important;
+}
+.elementor-element-1da7956 {
+  position: relative !important;
+  z-index: 1 !important;
+}
+@media (max-width: 1024px) {
+  .lp-cost-shell {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+  .lp-cost-title {
+    text-align: center !important;
+  }
+  .lp-cost-title .elementor-heading-title {
+    font-size: 38px !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+  .lp-cost-title::after {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  .lp-cost-section {
+    --padding-left: 0px !important;
+    --padding-right: 0px !important;
+  }
+  .lp-cost-section > .e-con-inner {
+    max-width: 100% !important;
+    padding-inline-start: 20px !important;
+    padding-inline-end: 20px !important;
+  }
+  .lp-cost-shell {
+    grid-template-columns: 1fr !important;
+    width: calc(100% - 8px) !important;
+    max-width: calc(100% - 8px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 24px 20px !important;
+    border-radius: 22px !important;
+    margin-bottom: clamp(36px, 10vw, 56px) !important;
+  }
+  .lp-cost-title .elementor-heading-title {
+    font-size: 34px !important;
+    line-height: 1.12 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+  .lp-cost-title::after {
+    margin-top: 14px !important;
+  }
+  .lp-cost-text {
+    padding: 18px 16px !important;
+  }
+  .lp-cost-text > .elementor-widget-container {
+    gap: 14px !important;
+  }
+  .lp-cost-number {
+    flex-basis: 36px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 12px !important;
+  }
+  .lp-cost-text .elementor-heading-title {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+}
 </style>
 </head>
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-10983 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-10983">
@@ -2743,7 +2969,7 @@ body::-webkit-scrollbar-track {
 
 				<div class="elementor-element elementor-element-cf5cdf1 elementor-widget elementor-widget-heading" data-id="cf5cdf1" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">O problema n&#227;o &#233; voc&#234;. &#201; que <b>ningu&#233;m te ensinou a entrevistar com t&#233;cnica.</b></h2>
+					<h2 class="elementor-heading-title elementor-size-default">O problema n&#227;o &#233; voc&#234;.<span class="lp-quote-line">&#201; que <b>ningu&#233;m te ensinou a entrevistar com t&#233;cnica.</b></span></h2>
 				</div>
 				</div>
 
@@ -2793,7 +3019,7 @@ body::-webkit-scrollbar-track {
 						<div class="elementor-icon-box-icon"><span class="elementor-icon"><i class="fas fa-chart-bar"></i></span></div>
 						<div class="elementor-icon-box-content">
 							<h3 class="elementor-icon-box-title">Planilha Pr&#225;tica de Ranqueamento</h3>
-							<p class="elementor-icon-box-description">Uma ferramenta objetiva para classificar candidatos e racionalizar o processo de sele&#231;&#227;o. Saia do &#8220;eu acho que ele &#233; bom&#8221; para o &#8220;ele &#233; o melhor para esta vaga baseado em dados&#8221;.</p>
+							<p class="elementor-icon-box-description">Uma ferramenta objetiva para classificar candidatos e racionalizar o processo de sele&#231;&#227;o.<br>Saia do &#8220;eu acho que ele &#233; bom&#8221; para o &#8220;ele &#233; o melhor para esta vaga baseado em dados&#8221;.</p>
 						</div>
 					</div>
 				</div>
@@ -2928,6 +3154,45 @@ body::-webkit-scrollbar-track {
 					</div>
 				</div>
 
+				<!-- SECTION: QUANTO VALE EVITAR UMA CONTRATACAO ERRADA -->
+				<div class="elementor-element elementor-element-lpcost01 e-flex e-con-boxed e-con e-parent lp-cost-section" data-id="lpcost01" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-lpcost02 e-con-full e-flex e-con e-child lp-cost-shell" data-id="lpcost02" data-element_type="container" data-e-type="container">
+
+				<div class="elementor-element elementor-element-lpcost03 elementor-widget elementor-widget-heading lp-cost-title" data-id="lpcost03" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Quanto vale evitar uma contrata&#231;&#227;o errada?</h2>
+				</div>
+				</div>
+
+		<div class="elementor-element elementor-element-lpcostcopy e-con-full e-flex e-con e-child lp-cost-copy" data-id="lpcostcopy" data-element_type="container" data-e-type="container">
+
+				<div class="elementor-element elementor-element-lpcost04 elementor-widget elementor-widget-heading lp-cost-text" data-id="lpcost04" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<span class="lp-cost-number" aria-hidden="true"><i class="fas fa-chart-line"></i></span>
+					<h2 class="elementor-heading-title elementor-size-default">Se apenas <strong>20% dos membros de uma equipe</strong> tivessem alto desempenho, o aumento resultante na produtividade poderia transformar um projeto de <strong>tr&#234;s anos, em menos de dois</strong> para ser conclu&#237;do, de acordo com estudo da McKinsey.</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-lpcost05 elementor-widget elementor-widget-heading lp-cost-text" data-id="lpcost05" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<span class="lp-cost-number" aria-hidden="true"><i class="fas fa-wallet"></i></span>
+					<h2 class="elementor-heading-title elementor-size-default">Estudos indicam que o turnover m&#233;dio no Brasil pode <strong>custar at&#233; 3 vezes o sal&#225;rio</strong> do profissional desligado.</h2>
+				</div>
+				</div>
+
+				<div class="elementor-element elementor-element-lpcost06 elementor-widget elementor-widget-heading lp-cost-text" data-id="lpcost06" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<span class="lp-cost-number" aria-hidden="true"><i class="fas fa-file-invoice-dollar"></i></span>
+					<h2 class="elementor-heading-title elementor-size-default">Uma contrata&#231;&#227;o errada pode custar entre <strong>30% e 200% do sal&#225;rio anual do colaborador</strong> (SHRM - Society for Human Resource Management, The Cost of a Bad Hire, 2017).</h2>
+				</div>
+				</div>
+		</div>
+
+		</div>
+					</div>
+				</div>
+
 				<!-- SECTION: SOBRE -->
 				<div class="elementor-element elementor-element-1da7956 e-flex e-con-boxed e-con e-parent" data-id="1da7956" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
@@ -2940,7 +3205,7 @@ body::-webkit-scrollbar-track {
 
 				<div class="elementor-element elementor-element-8985fb5 elementor-widget elementor-widget-heading" data-id="8985fb5" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Sou mineira, mas moro em Niter&#243;i h&#225; 20 anos. Minha jornada com o comportamento humano come&#231;ou cedo: sou formada em <b>Psicologia pela UFF</b>, p&#243;s-graduada em <b>Administra&#231;&#227;o de Empresas pela FGV</b> e certificada em <b>Coaching Integral Sist&#234;mico pela FEBRACIS</b>.<br><br>Estudo o universo do RH desde 2012 e atuo na &#225;rea desde 2014. Nesse tempo, acumulei experi&#234;ncia em recrutamento e sele&#231;&#227;o de todos os n&#237;veis, treinamento, consultoria interna de RH, indicadores, sistemas e inova&#231;&#227;o.<br><br>Tamb&#233;m sou <b>Analista de Perfil Comportamental</b>, especialista em alinhar candidatos &#224; cultura organizacional.<br><br>Minha miss&#227;o &#233; promover transformA&#199;&#195;O de vidas, acelerando carreiras e potencializando neg&#243;cios.</h2>
+					<h2 class="elementor-heading-title elementor-size-default">Sou mineira, mas moro em Niter&#243;i h&#225; 20 anos.<br>Minha jornada com o comportamento humano come&#231;ou cedo: sou formada em <b>Psicologia pela UFF</b>, p&#243;s-graduada em <b>Administra&#231;&#227;o de Empresas pela FGV</b> e certificada em <b>Coaching Integral Sist&#234;mico pela FEBRACIS</b>.<br><br>Estudo o universo do RH desde 2012 e atuo na &#225;rea desde 2014. Nesse tempo, acumulei experi&#234;ncia em recrutamento e sele&#231;&#227;o de todos os n&#237;veis, treinamento, consultoria interna de RH, indicadores, sistemas e inova&#231;&#227;o.<br><br>Tamb&#233;m sou <b>Analista de Perfil Comportamental</b>, especialista em alinhar candidatos &#224; cultura organizacional.<br><br>Minha miss&#227;o &#233; promover <span class="lp-bio-gold"><b>transformA&#199;&#195;O</b></span> de <span class="lp-bio-gold"><b>vidas</b></span>, acelerando <span class="lp-bio-gold"><b>carreiras</b></span> e potencializando neg&#243;cios.</h2>
 				</div>
 				</div>
 
@@ -2995,7 +3260,7 @@ body::-webkit-scrollbar-track {
 
 				<div class="elementor-element elementor-element-e34cd51 elementor-widget elementor-widget-heading lp-price-old" data-id="e34cd51" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">De R$297,00</h2>
+					<h2 class="elementor-heading-title elementor-size-default">De R$89,90</h2>
 				</div>
 				</div>
 
@@ -3095,7 +3360,7 @@ body::-webkit-scrollbar-track {
 									<span class="e-opened"><i class="fas fa-minus"></i></span>
 								</span>
 							</summary>
-							<div class="e-con e-con-full"><p>Voc&#234; receber&#225; o acesso por email. O conte&#250;do ser&#225; acessado ou baixado atrav&#233;s de um computador, celular, tablet ou outro dispositivo digital. Voc&#234; tamb&#233;m pode acessar o produto comprado nesta p&#225;gina: <br>01 - Fa&#231;a login na Hotmart clicando em &#39;Entrar&#39;<br><br>02 - Acesse o menu lateral, clique em &#39;Minha conta&#39;<br><br>03 - Clique em &#39;Minhas compras&#39; e l&#225; estar&#227;o todos os produtos que voc&#234; j&#225; comprou!</p></div>
+							<div class="e-con e-con-full"><p>Voc&#234; receber&#225; o acesso por email. O conte&#250;do ser&#225; acessado ou baixado atrav&#233;s de um computador, celular, tablet ou outro dispositivo digital. Voc&#234; tamb&#233;m pode acessar o produto comprado nesta p&#225;gina: <br><br>01 - Fa&#231;a login na Hotmart clicando em &#39;Entrar&#39;<br><br>02 - Acesse o menu lateral, clique em &#39;Minha conta&#39;<br><br>03 - Clique em &#39;Minhas compras&#39; e l&#225; estar&#227;o todos os produtos que voc&#234; j&#225; comprou!</p></div>
 						</details>
 
 						<details class="e-n-accordion-item">
@@ -3284,6 +3549,52 @@ if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_c
     stagger(".lp-ideal-card",
       ".lp-ideal-grid",
       { opacity: 0, y: 36, scale: 0.96, stagger: 0.1, duration: 0.65, ease: "power2.out" });
+
+    /* ---- CUSTO DA CONTRATAÇÃO ERRADA ---- */
+    (function animateCostTitleTyping() {
+      var title = document.querySelector(".lp-cost-title .elementor-heading-title");
+      if (!title || title.dataset.lpTypingReady === "1") return;
+
+      var text = title.textContent;
+      title.dataset.lpTypingReady = "1";
+      title.setAttribute("aria-label", text);
+      title.textContent = "";
+
+      text.split(" ").forEach(function(word, wordIndex, words) {
+        var wordSpan = document.createElement("span");
+        wordSpan.className = "lp-type-word";
+        wordSpan.setAttribute("aria-hidden", "true");
+
+        word.split("").forEach(function(char) {
+          var charSpan = document.createElement("span");
+          charSpan.className = "lp-type-char";
+          charSpan.innerHTML = char;
+          wordSpan.appendChild(charSpan);
+        });
+
+        title.appendChild(wordSpan);
+        if (wordIndex < words.length - 1) {
+          title.appendChild(document.createTextNode(" "));
+        }
+      });
+
+      gsap.from(title.querySelectorAll(".lp-type-char"), {
+        scrollTrigger: {
+          trigger: ".lp-cost-section",
+          start: "top 78%",
+          once: true
+        },
+        opacity: 0,
+        y: 18,
+        filter: "blur(4px)",
+        stagger: 0.025,
+        duration: 0.42,
+        ease: "power2.out"
+      });
+    })();
+    stagger(".lp-cost-text",
+      ".lp-cost-copy",
+      { opacity: 0, y: 42, scale: 0.98, stagger: 0.14, duration: 0.72, ease: "power3.out" });
 
     /* ---- SOBRE ---- */
     onEnter(".elementor-element-e5c1f15 .elementor-heading-title",
